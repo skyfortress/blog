@@ -1,0 +1,26 @@
+---
+layout: page.hbs
+title: "Портфолио | skyfortress.com.ua"
+pagination:
+  data: portfolio
+  size: 6
+---
+<main class="document portfolio">
+    <div class="heading-blue">Портфолио</div>
+    <div class="portfolio-grid">
+        {{#each pagination.items}}
+            <div>
+            <a href="/portfolio/{{ this.url }}">
+                <img src="{{ this.images.[0] }}" width="230" height="135">
+            </a>
+            {{ this.title }}
+            <br>
+            </div>
+        {{/each}}
+    </div>
+    <div class="separator"></div>
+</main>
+
+
+
+

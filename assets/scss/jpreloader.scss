@@ -1,0 +1,132 @@
+@import "compass/css3";
+@import "ceaser-easing";
+$blue: #36537e;
+
+
+.animation{ 
+	.header-top{
+		@include animation(fadeIn 1.0s 1.5s ease-in-out forwards);
+	}
+	.fortress{
+		@include animation(showFortress 2.2s ceaser($easeOutBack) backwards);
+	}
+	.clouds{
+		@include animation(showLeftCloud 1s linear backwards);
+	}
+	.clouds2{
+		@include animation(fadeIn 1s linear forwards);
+	}
+	.line{
+		@include animation(fadeIn 2.0s 2.0s linear forwards);
+	}
+	.buttons{
+		@include animation(fadeIn 1.0s 3.0s linear forwards);
+	}
+}
+.large{
+	@include transform-style(preserve-3d);
+	@include perspective(0);
+
+	.header-top{
+		@include transform(translate3d(0, -70px, 0));
+	}
+	.clouds2{
+		@include opacity(0);
+		@include transform(translate3d(10%, 0, 0));
+	}
+	.line{
+		@include opacity(0);
+	}
+	.buttons{
+		@include opacity(0);
+	}
+}
+#main{
+	@include transform(translate3d(0, 100%, 0));
+	@include opacity(1);
+}
+.content.animation{
+	@include animation(fadeIn 1.2s ceaser($easeOutBack) forwards);
+}
+@include keyframes(fadeIn){
+	to {
+		@include opacity(1);
+		@include transform(translate3d(0, 0, 0));
+	}
+};
+
+@include keyframes(showFortress){
+  from{
+    @include opacity(0);
+    @include transform(translateY(20%));
+  }
+  to {
+    @include opacity(1);
+    @include transform(translateY(0));
+  }
+};
+@include keyframes(showLeftCloud){
+  from{
+    @include opacity(0);
+    @include transform(translateX(-10%));
+  }
+  to {
+    @include opacity(1);
+    @include transform(translateY(0));
+  }
+};
+
+.loader{
+  @include animation(animball_two 1s infinite);
+  width:44px; 
+  height:44px;
+  margin-left: -22px;
+  margin-top: -22px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+}
+
+.ball{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  @include animation(animball_one 1s infinite ease);
+}
+.ball-1{
+  @extend .ball;
+  background-color:darken(#fff, 20%);
+  top:0;
+  left:0;
+}
+.ball-2{
+  @extend .ball;
+  background-color: lighten(#fff, 10%);
+  top:0;
+  left:24px;
+}
+.ball-3{
+  @extend .ball;
+  background-color: #fff;
+  top:24px; 
+  left:0;
+}
+.ball-4{
+  @extend .ball;
+  background-color: darken(#fff, 10%);
+  top:24px; 
+  left:24px;
+}
+
+@include keyframes(animball_one){
+  0%{ position: absolute;}
+  50%{top:12px; left:12px; position: absolute;opacity:0.5;}
+  100%{ position: absolute;}
+}
+
+@include keyframes(animball_two){
+  0%{transform:rotate(0deg) scale(1);}
+  50%{transform:rotate(360deg) scale(1.3);}
+  100%{transform:rotate(720deg) scale(1);}
+}

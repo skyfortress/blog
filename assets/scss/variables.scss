@@ -1,0 +1,225 @@
+@import "compass/css3";
+@import "compass/utilities/general/clearfix";
+@import "ceaser-easing";
+
+
+@font-face {
+	font-family: 'gothic';
+	src: url('../fonts/gothic.eot');
+	src: local('gothic'), url('../fonts/gothic.woff') format('woff'), url('../fonts/gothic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'IstokWeb-Italic';
+  src: url('../fonts/IstokWeb-Italic.eot');
+  src: url('../fonts/IstokWeb-Italic.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/IstokWeb-Italic.woff') format('woff'),
+       url('../fonts/IstokWeb-Italic.ttf') format('truetype'),
+       url('../fonts/IstokWeb-Italic.svg#IstokWeb-Italic') format('svg');
+}
+
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), 
+  url("../fonts/roboto-cyrilic.woff2") format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), 
+  url("../fonts/roboto.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+
+
+
+$blue: #36537e;
+$red: #cc2814;
+$green: #8cae51;
+$green2: #8FAF1A;
+@include keyframes(slide-left) {
+	 0% {
+	 	@include opacity(0);
+	 }
+	 50% {
+	 	@include opacity(0);
+	 }
+	 100% {
+		@include opacity(1);
+	 }
+}
+@include keyframes(slide-top) {
+	 0% {
+	 	top: 100px;
+	 	@include opacity(0);
+	 }
+	 100% {
+	 	
+		top: 0;
+		@include opacity(1);
+	 }
+}
+
+/////////////////////////////////////////////
+
+.header{
+	ul{
+		position: relative;
+    	overflow: hidden;
+    	display: inline-block;
+    	float: right;
+
+		&:hover .active a{
+			color: $blue;
+		}
+		&:hover .home:before{
+			background-position: -272px -8px;
+		}
+
+
+    	li{
+			float: left;
+  			display: inline-block;
+			padding: 25px 10px 0;
+			font-family: 'gothic',sans-serif;	
+			transition: all 0.42s ease-in-out;
+			text-decoration: none;
+			font-size: 14px;
+			color: #39567f;
+			text-transform: uppercase;	
+			cursor: pointer;
+	
+
+
+			&.top-bar {
+				padding: 0;
+		        @include ceaser-transition(all, 0.42s, $easeInOutBack);
+		        position: absolute;
+		        height: 3px;
+		        top: 0;
+		        background-color: $red;
+			}
+			&:hover a,
+			&.active a{
+				color: $red;
+			}
+			&:hover.active a{
+				color: $red !important;
+			}
+
+
+	 /// .#{$hover-bottom-bar-name}{
+         &:nth-child(1){	  
+          &.active  ~ .top-bar {
+            left: 0;
+            width: 40px;
+          }
+          &:hover,
+          &:focus{
+            ~ .top-bar{
+              width: 40px !important;	
+              left: 0 !important;
+            }
+          }
+        }
+		&:nth-child(2){	  
+          &.active  ~ .top-bar {
+            left: 45px;
+            width: 48px;
+          }
+          &:hover,
+          &:focus{
+            ~ .top-bar{
+              width: 48px !important;	
+              left: 45px !important;
+            }
+          }
+        }
+        &:nth-child(3){	  
+          &.active  ~ .top-bar {
+            left: 100px;
+            width: 105px;
+          }
+          &:hover,
+          &:focus{
+            ~ .top-bar{
+              width: 105px !important;	
+              left: 100px !important;
+            }
+          }
+        }
+        &:nth-child(4){	  
+          &.active  ~ .top-bar {
+            left: 213px;
+            width: 85px;
+          }
+          &:hover,
+          &:focus{
+            ~ .top-bar{
+              width: 85px !important;	
+              left: 213px !important;
+            }
+          }
+        }
+        &:nth-child(5){	  
+          &.active  ~ .top-bar {
+            left: 305px;
+            width: 78px;
+          }
+          &:hover,
+          &:focus{
+            ~ .top-bar{
+              width: 78px !important;	
+              left: 305px !important;
+            }
+          }
+        }
+
+
+
+
+    }
+
+			a{
+			font-family: 'gothic',sans-serif;	
+			transition: all 0.42s ease-in-out;
+			text-decoration: none;
+			font-size: 14px;
+			color: #39567f;
+			text-transform: uppercase;	
+		}
+		.home:before{
+			position: absolute;
+			top: 24px;
+			content: "";
+			display: block;
+			width: 20px;
+			height: 20px;
+			background: image-url("sprite.png") -272px -8px;
+		}
+		.home a{
+			position: relative;
+			display: block;
+			width: 20px;
+			height: 20px;
+		}
+		.home{
+			width: 20px;
+			height: 20px;
+		}
+		.home:hover:before,
+		.active:before
+		{
+			background-position: -272px -31px;
+		}
+
+
+
+	}
+
+}

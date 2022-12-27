@@ -1,0 +1,60 @@
+---
+layout: page.hbs
+title: "Блог | skyfortress.com.ua"
+pagination:
+  data: blog
+  size: 6
+data:
+  data: categories
+  size: 10
+---
+{{> sidebar }}
+<main class="articles">
+    {{#each pagination.items}}
+    <article>
+        <div class="heading">
+            <div class="date">
+                <span>10</span>
+                Окт
+            </div>
+            <a class="title" href="{{ this.slug }}">
+                {{ this.title }}
+            </a>
+        </div>
+        <div class="image">
+            <img src="https://placehold.co/630x250" style="max-width: 100%" height="250" />
+        </div>
+        <div class="desc">
+            {{{ this.excerpt }}}
+        </div>
+        <div class="info">
+            <span class="comments">0 отзывов</span>
+            <span class="views">0 просмотров</span>
+            <span class="tag">
+                    <a href="#">Другое</a>
+            </span>
+            <a href="{{ this.slug }}" class="black-button">Подробнее</a>
+        </div>
+    </article>
+    {{!-- {% else %}
+    <article>{{ noPostsMessage }} </article> --}}
+    {{/each}}
+    {{!-- {% if posts.lastPage > 1 %}
+    <ul class="pagination">
+        {% if posts.currentPage > 1 %}
+        <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">&larr; Prev</a></li>
+        {% endif %}
+
+        {% for page in 1..posts.lastPage %}
+        <li class="{{ posts.currentPage == page ? 'active' : null }}">
+            <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+        </li>
+        {% endfor %}
+
+        {% if posts.lastPage > posts.currentPage %}
+        <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next &rarr;</a></li>
+        {% endif %}
+    </ul>
+    {% endif %} --}}
+    <div style="height: 150px"></div>
+</main>
