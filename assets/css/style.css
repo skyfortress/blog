@@ -743,33 +743,26 @@ main {
   background: -webkit-linear-gradient(top, #2c4877 0%, #69aebf 100%);
   background: -o-linear-gradient(top, #2c4877 0%, #69aebf 100%);
   background: -ms-linear-gradient(top, #2c4877 0%, #69aebf 100%);
-  background: linear-gradient(to bottom, #2c4877 0%, #69aebf 100%);
+  background: linear-gradient(to bottom, #152645 0%, #69aebf 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c4877', endColorstr='#69aebf',GradientType=0 );
 }
-.header .clouds-bg .fortress {
-  width: 794px;
-  height: 644px;
-  background: url('../images/fortress.png?1446146377') no-repeat;
-  position: absolute;
-  top: 56px;
-  right: -165px;
-}
+
 .header .clouds-bg .slogan, .header.large .clouds-bg .second-slogan {
   display: block;
   padding-top: 50px;
   text-align: center;
+  text-transform: uppercase;
   color: #fff;
   font-family: 'IstokWeb-Italic',sans-serif;
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 400;
   text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
 }
 .header .clouds-bg .line {
-  position: absolute;
-  top: 56px;
+  margin: 0 auto;
   width: 400px;
   height: 11px;
-  background: url('../images/seam-line.png?1446146377');
+  background: url('../images/seam-line.png');
 }
 .header .clouds-bg .line:last-child {
   right: 0;
@@ -777,7 +770,7 @@ main {
 .header .clouds-bg .buttons {
   z-index: 2;
   position: relative;
-  margin-top: 40px;
+  margin: 30px auto;
   width: 430px;
   text-align: center;
 }
@@ -808,7 +801,8 @@ main {
   font-family: "gothic";
   -webkit-font-smoothing: antialiased;
   color: #fff;
-  padding: 15px 40px;
+  width: 120px;
+  padding: 15px 0px;
   background: #cc2814;
   border-bottom: 1px solid #ea3e29;
   -moz-transform-style: preserve-3d;
@@ -890,24 +884,23 @@ main {
 }
 
 .header.large {
-  height: 700px;
+  height: 100%;
 }
 .header.large .clouds-bg {
-  height: 700px;
+  height: 100%;
   -moz-perspective: 1px;
   -webkit-perspective: 1px;
   perspective: 1px;
   overflow: hidden;
 }
 .header.large .clouds-bg .slogan, .header.large .clouds-bg .second-slogan {
-  visibility: hidden;
   line-height: 70px;
   padding-left: 18px;
   padding-top: 220px;
-  text-align: left;
+  text-align: center;
   color: #fff;
-  font-family: 'IstokWeb-Italic',sans-serif;
-  font-size: 60px;
+  font-family: "gothic";
+  font-size: 40px;
   font-weight: 400;
   text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
 }
@@ -916,12 +909,13 @@ main {
   line-height: 22px;
   font-style: normal;
   font-family: 'gothic',sans-serif;
-  font-size: 22px;
+  font-size: 18px;
+  letter-spacing: 1.2pt;
 }
 .header.large .clouds-bg .line {
   position: relative;
   top: 0;
-  width: 430px;
+  width: 420px;
   height: 11px;
   background: url('../images/seam-line.png?1446146377');
 }
@@ -2225,3 +2219,23 @@ button[type="submit"]:focus,
 #error .wrapper {
   height: 100%;
 }
+
+.contact {
+  text-align: center;
+}
+
+
+.contact a {
+  display: inline-block;
+  overflow: hidden;
+  width: 2em;
+  line-height: 2em;
+  margin: 0 .20em;
+  color: #fff;
+  font-size: 1.7em;
+  transition: background-color .2s ease-in-out;
+  border-radius: 50%;
+  animation: icons .2s ease-out 0s 1 normal forwards;
+}
+
+.contact a:hover { color:#cc2814; }

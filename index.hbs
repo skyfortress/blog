@@ -12,106 +12,34 @@ pagination:
     <title>Главная</title>
     <meta name="description" content="">
     <meta name="title" content="">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="/assets/css/style.css" rel="stylesheet">
-    <link href="/assets/css/jquery-letterfx.min.css" rel="stylesheet">
-    <link href="/assets/css/jpreloader.css" rel="stylesheet">
-    <script type="text/javascript">
-        window.onload = function() {
-            setTimeout (function () {
-                scrollTo(0,0);
-            }, 0);
-        }
-    </script>
 </head>
 <body>
-<header class="header large" id="viewPort">
-    {{> topMenu }}
+<header class="header large">
     <div class="clouds-bg large">
-        <div class="loader">
-            <div class="ball-1"></div>
-            <div class="ball-2"></div>
-            <div class="ball-3"></div>
-            <div class="ball-4"></div>
-        </div>
-        <div class="clouds" id="paralaxCloud"></div>
+        <div class="clouds"></div>
+        <div class="clouds2"></div>
+
         <div class="wrapper">
-            <div class="fortress" id="paralaxFortress"></div>
-            <div id="flying">
-                <div class="slogan" id="slogan">Only  <span>cool</span>  stuff!</div>
-                <div class="line"></div>
-                <div class="second-slogan" id="second-slogan">Персональный сайт веб-разработчика</div>
-                <div class="line"></div>
-                <div class="buttons">
-                    <div class="perspective">
-                        <a href="/portfolio">Портфолио</a>
-                        <a href="/blog">Блог</a>
-                    </div>
+            <div class="slogan" id="slogan">Alexey Bondarenko</div>
+            <div class="line"></div>
+            <div class="second-slogan" id="second-slogan">Fullstack software engineer</div>
+            <div class="line"></div>
+            <div class="buttons">
+                <div class="perspective">
+                    <a href="/portfolio">CV</a>
+                    <a href="/blog">BLOG</a>
                 </div>
             </div>
+            <div class="contact">
+                <a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fa fa-telegram"></i></a>
+                <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                <a href="https://github.com/skyfortress" target="_blank"><i class="fa fa-github"></i></a>
+            </div>
         </div>
-        <div class="clouds2"></div>
     </div>
 </header>
-<!-- .header-->
-<!-- .content -->
-<div class="content" id="main">
-    <div class="content-top"></div>
-    <div class="benefits">
-        <div class="design">
-            <div class="icon"></div>
-            <span>Крутой дизайн</span>
-            Дизайн должен быть настолько хорош, чтоб хотелось добавить сайт в закладки
-        </div>
-        <div class="customize">
-            <div class="icon"></div>
-            <span>Глубокая настройка</span>
-            Только правильный и оптимизированный код позволит обогнать всех конкурентов
-        </div>
-        <div class="technology">
-            <div class="icon"></div>
-            <span>Передовые технологии</span>
-            Нужно постоянно улучшать сайт, вместе с бурным развитием интернета
-        </div>
-    </div>
-
-    <div class="portfolio-block">
-        <div class="line"></div>
-        <div class="heading-blue">Последние работы</div>
-        <div>
-            {{#each pagination.items}}
-            <div class="item">
-                <a href="/portfolio/{{ this.url }}">
-                     <img src="{{ this.images.[0] }}" width="230" height="135">
-                </a>
-            </div>
-            {{/each}}
-        </div>
-    </div>
-    <main class="lastposts">
-        {{> lastPosts }}
-    </main>
-    <div class="stamp"></div>
-    <div class="content-bottom"></div>
-</div><!-- .content end -->
-<!-- smooth scroll hack -->
-<div style="position: fixed;">
-    <div style="  position: fixed;"></div>
-</div>
-<!-- .footer -->
-{{> footer }}
-<!-- .footer end -->
-<script src="/assets/js/jquery.min.js"></script>
-<script src="/assets/js/jquery-letterfx.min.js"></script>
-<script src="/assets/js/main.js"></script>
-<script src="/assets/js/jpreloader.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('body').jpreLoader({
-            autoClose: true,
-            onetimeLoad: true,
-            loaderVPos: "50%"
-        });
-    });
-</script>
 </body>
 </html>
