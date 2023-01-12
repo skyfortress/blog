@@ -18,7 +18,7 @@ resource "aws_cloudfront_distribution" "blog" {
     prefix          = ""
   }
 
-  aliases = ["skyfortress.dev"]
+  aliases = [var.domain_name, "www.${var.domain_name}"]
 
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD"]
@@ -37,6 +37,10 @@ resource "aws_cloudfront_distribution" "blog" {
     min_ttl                = 0
     default_ttl            = 3600
     max_ttl                = 86400
+    function_association {
+        event_type   = "viewer-request"
+        function_arn = aws_cloudfront_function.rewrite_uri.arn
+	}
   }
 
   restrictions {
