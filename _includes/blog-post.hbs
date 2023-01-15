@@ -1,39 +1,22 @@
 ---
 layout: page.hbs
-pagination:
-    data: blog
-    size: 1
-    alias: post
-permalink: "blog/{{ post.slug }}/"
 ---
 <main class="articles">
     <article>
         <div class="heading">
-            <div class="date">
-                <span>10</span>
-                Окт
-            </div>
-            <a class="title">
-                {{ post.title }}
+            {{> date page.date}}
+            <a class="title" href="/blog">
+                {{ title }}
             </a>
         </div>
-        <div class="image">
-            <img src="https://placehold.co/630x250" style="max-width: 100%" height="250" />
-        </div>
         <div class="desc">
-            {{{ post.content_html }}}
+            {{{ content }}}
         </div>
-        <div class="info">
-            <span class="comments">0 отзывов</span>
-            <span class="views">0 просмотров</span>
-            <span class="tag">
-                    <a href="#">Другое</a>
-            </span>
-        </div>
+        <div class="info"></div>
     </article>
     <div id="disqus_thread"></div>
     <script type="text/javascript">
-        var disqus_identifier = '{{post.slug}}';
+        var disqus_identifier = '{{page.url}}';
         var disqus_shortname = 'sky4tress'; // required: replace example with your forum shortname
 
         (function() {

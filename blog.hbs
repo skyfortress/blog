@@ -1,27 +1,18 @@
 ---
 layout: page.hbs
-title: "Блог | skyfortress.com.ua"
-pagination:
-  data: blog
-  size: 6
-data:
-  data: categories
-  size: 10
+title: "Alexey Bondarenko | Personal blog"
 ---
 <main class="articles">
-    {{#each pagination.items}}
+    {{#each collections.sortedPosts }}
     <article>
         <div class="heading">
-            <div class="date">
-                <span>10</span>
-                Окт
-            </div>
-            <a class="title" href="{{ this.slug }}">
-                {{ this.title }}
+            {{> date this.date}}
+            <a class="title" href="{{ this.url }}">
+                {{ this.data.title }}
             </a>
         </div>
         <div class="desc">
-            {{{ this.excerpt }}}
+            {{{ this.data.description }}}
         </div>
         <div class="info">
         </div>

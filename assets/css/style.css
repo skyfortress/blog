@@ -1037,11 +1037,12 @@ article .heading a:hover {
 }
 
 .articles article .date, .articles .lastposts article .info .tag, .lastposts .articles article .info .tag {
-  padding: 0 4px;
+  padding: 0 15px;
   height: 100%;
   color: #8FAF1A;
   border-left: 2px solid #8FAF1A;
   float: left;
+  letter-spacing: 1px;
   width: 80px;
   line-height: 18px;
   font-size: 16px;
@@ -1180,7 +1181,7 @@ button[type="submit"]:focus,
 
 .stamp {
   position: relative;
-  top: 40px;
+  top: -60px;
   margin: 0 auto;
   width: 160px;
   height: 130px;
