@@ -1,12 +1,12 @@
 terraform {
-    backend "s3" {
-        bucket = "skyfortress-terraform"
-        key    = "blog/terraform.tfstate"
-        region = "us-east-1"
-    }
+  backend "s3" {
+    bucket = "skyfortress-terraform"
+    key    = "blog/terraform.tfstate"
+    region = "us-east-1"
+  }
 }
 provider "aws" {
-    region = "us-east-1"
+  region = "us-east-1"
 }
 
 
@@ -51,8 +51,8 @@ data "aws_iam_policy_document" "blog_s3_policy" {
 }
 
 resource "aws_s3_bucket_policy" "blog" {
-  bucket = "${aws_s3_bucket.blog.id}"
-  policy = "${data.aws_iam_policy_document.blog_s3_policy.json}"
+  bucket = aws_s3_bucket.blog.id
+  policy = data.aws_iam_policy_document.blog_s3_policy.json
 }
 
 locals {

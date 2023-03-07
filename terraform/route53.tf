@@ -22,7 +22,7 @@ resource "aws_route53_record" "non-www" {
 
   alias {
     name                   = replace(aws_cloudfront_distribution.blog.domain_name, "/[.]$/", "")
-    zone_id                = "${aws_cloudfront_distribution.blog.hosted_zone_id}"
+    zone_id                = aws_cloudfront_distribution.blog.hosted_zone_id
     evaluate_target_health = true
   }
 
@@ -36,7 +36,7 @@ resource "aws_route53_record" "www" {
 
   alias {
     name                   = replace(aws_cloudfront_distribution.blog.domain_name, "/[.]$/", "")
-    zone_id                = "${aws_cloudfront_distribution.blog.hosted_zone_id}"
+    zone_id                = aws_cloudfront_distribution.blog.hosted_zone_id
     evaluate_target_health = true
   }
 
