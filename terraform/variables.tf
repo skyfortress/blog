@@ -1,4 +1,4 @@
 variable "domain_name" {
-  type = string
+  type    = string
   default = "skyfortress.dev"
 }

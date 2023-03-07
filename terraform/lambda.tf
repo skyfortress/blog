@@ -3,9 +3,9 @@ resource "random_id" "id" {
 }
 
 resource "aws_cloudfront_function" "rewrite_uri" {
-	name    = "rewrite-request-${random_id.id.hex}"
-	runtime = "cloudfront-js-1.0"
-	code    = <<EOF
+  name    = "rewrite-request-${random_id.id.hex}"
+  runtime = "cloudfront-js-1.0"
+  code    = <<EOF
     function handler(event) {
         var request = event.request;
         var uri = request.uri;
