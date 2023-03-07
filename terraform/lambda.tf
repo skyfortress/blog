@@ -30,7 +30,8 @@ resource "aws_cloudfront_function" "rewrite_uri" {
         if (uri.endsWith('/')) {
             request.uri += 'index.html';
         } 
-        // Check whether the URI is missing a file extension.
+        //
+        // Check whether the URI is missing a file extension. 
         else if (!uri.includes('.')) {
             return {
                 statusCode: 301,
