@@ -29,21 +29,17 @@ jobs:
       - name: Terraform Format
         id: fmt
         run: terraform fmt -check
-        working-directory: ${{ github.event.inputs.tfpath }}
       - name: Terraform Init
         id: init
-        run: terraform init
-        working-directory: ${{ github.event.inputs.tfpath }}      
+        run: terraform init  
       - name: Terraform Validate
         id: validate
         run: terraform validate -no-color
-        working-directory: ${{ github.event.inputs.tfpath }}
       - name: Terraform Plan
         id: plan
         if: github.event_name == 'pull_request'
         run: terraform plan -no-color -input=false
         continue-on-error: true
-        working-directory: ${{ github.event.inputs.tfpath }}
       - name: Update Pull Request
         uses: actions/github-script@v6
         if: github.event_name == 'pull_request'
@@ -75,4 +71,3 @@ jobs:
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve -input=false
-        working-directory: ${{ github.event.inputs.tfpath }}
