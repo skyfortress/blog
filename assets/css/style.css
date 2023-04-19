@@ -657,6 +657,8 @@ article .heading a:hover {
 
 .contact {
   text-align: center;
+  position: relative;
+  z-index: 99;
 }
 
 
