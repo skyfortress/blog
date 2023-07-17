@@ -676,3 +676,15 @@ article .heading a:hover {
 }
 
 .contact a:hover { color:#8FAF1A; }
+
+.badge img {
+  position: relative;
+  display: block;
+  opacity: 0.5;
+  width: 120px;
+  height: 120px;
+  margin: 10px auto 0;
+}
+.badge img:hover {
+  opacity: 1;
+}
