@@ -36,4 +36,4 @@ jobs:
       - name: Upload on S3
         run: aws s3 sync ./_site/ s3://skyfortress.dev
       - name: Invalidate cloudfront cache
-        run: aws cloudfront create-invalidation --distribution-id E3QA4CEIW2BTGW --paths "*"
+        run: aws cloudfront create-invalidation --distribution-id E3QA4CEIW2BTGW --paths "/*"
