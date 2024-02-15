@@ -6,11 +6,33 @@ resource "aws_cloudfront_function" "rewrite_uri" {
   name    = "rewrite-request-${random_id.id.hex}"
   runtime = "cloudfront-js-1.0"
   code    = <<EOF
+    function isCloudFrontURL(headers) {
+        if(headers && headers["host"]) {
+            if(headers["host"].value.includes("cloudfront"))
+                return true
+            else if(headers["host"].multiValue)
+                return headers["host"].multiValue.some(entry => entry.value.includes("cloudfront"))
+        }
+        return false
+    }
+
     function handler(event) {
         var request = event.request;
         var uri = request.uri;
 
         var host = request.headers.host.value;
+
+        if (isCloudFrontURL(request.headers)) {
+            return {
+                statusCode: 404,
+                statusDescription: 'Page not found',
+                headers: {
+                    "content-type": { 
+                        "value": "text/plain; charset=UTF-8" 
+                    }
+                }
+            }
+        }
 
         if (host === 'www.${var.domain_name}') {
             return {
@@ -24,8 +46,6 @@ resource "aws_cloudfront_function" "rewrite_uri" {
         }
 
 
-
-        
         // Check whether the URI is missing a file name.
         if (uri.endsWith('/')) {
             request.uri += 'index.html';
