@@ -3,19 +3,19 @@ layout: page.hbs
 ---
 <main class="articles">
     <article>
-        <div class="heading">
+        {{!-- <div class="heading">
             {{> date page.date}}
             <a class="title" href="/blog">
                 {{ title }}
             </a>
-        </div>
+        </div> --}}
         <div class="desc">
             {{{ content }}}
         </div>
         <div class="info"></div>
     </article>
-    <div id="disqus_thread"></div>
-    <script type="text/javascript">
+      <!-- <div id="disqus_thread"></div>
+        <script type="text/javascript">
         var disqus_identifier = '{{page.url}}';
         var disqus_shortname = 'sky4tress'; // required: replace example with your forum shortname
 
@@ -25,6 +25,6 @@ layout: page.hbs
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         })();
     </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
     <div style="height: 150px"></div>
 </main>
