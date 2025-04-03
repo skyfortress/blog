@@ -1,43 +1,387 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexey Bondarenko - Senior Fullstack Engineer</title>
-    <meta name="description" content="">
-    <meta name="title" content="">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/assets/css/style.css" rel="stylesheet">
+    <title>SkyFortress Audit - Expert AI Project Audits for Security, Performance, and Scalability</title>
+    <meta name="description" content="SkyFortress Audit provides expert reviews of AI-generated projects to ensure security, performance, and scalability. Get peace of mind with our professional audits.">
+    <meta name="keywords" content="AI audit, AI project review, AI security, AI performance, AI scalability, AI-generated code, expert code review">
+    <meta property="og:title" content="SkyFortress Audit - Expert AI Project Audits">
+    <meta property="og:description" content="Ensure your AI-generated project is secure, scalable, and ready for production with SkyFortress Audit.">
+    <meta property="og:url" content="https://skyfortress.dev">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SkyFortress Audit - Expert AI Project Audits">
+    <meta name="twitter:description" content="Get expert reviews of your AI-generated projects for security, performance, and scalability.">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+        }
+        .accent-gradient {
+            background: linear-gradient(135deg, #6366F1 0%, #818CF8 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease-in-out;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            border-color: rgba(99, 102, 241, 0.3);
+            box-shadow: 0 10px 30px -15px rgba(99, 102, 241, 0.2);
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .service-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        .feature-icon {
+            background: linear-gradient(135deg, #6366F1 0%, #818CF8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .custom-shadow {
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.1);
+        }
+        .glass-card {
+            background: #fff;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: linear-gradient(135deg, #6366F1 0%, #818CF8 100%);
+            transition: width 0.3s ease-in-out;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        /* Hero animations */
+        .hero-title {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        .hero-description {
+            animation: fadeInUp 0.8s ease-out 0.3s forwards;
+            opacity: 0;
+        }
+        .hero-cta {
+            animation: fadeInUp 0.8s ease-out 0.6s forwards;
+            opacity: 0;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-bg-animate {
+            animation: pulse 8s ease-in-out infinite alternate;
+        }
+        @keyframes pulse {
+            0% {
+                opacity: 0.7;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0.9;
+                transform: scale(1.05);
+            }
+        }
+    </style>
 </head>
-<body>
-<header class="header large">
-    <div class="clouds-bg large">
-        <div class="clouds"></div>
-        <div class="clouds2"></div>
-        <div class="slogan">Oleksii Bondarenko</div>
-        <div class="line"></div>
-        <div class="second-slogan" id="second-slogan">Technical Lead</div>
-        <div class="line"></div>
-        <div class="buttons">
-            <div class="perspective">
-                <a href="/assets/Oleksii_Bondarenko_Technical_lead_Senior FullStack_Developer.pdf">CV</a>
-                {{!-- <a href="/blog">BLOG</a> --}}
+<body class="bg-gray-50">
+    <nav class="glass-card fixed w-full z-10 backdrop-blur-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <a href="#" class="flex flex-col">
+                        <span class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-500 logo-text">
+                            SkyFortress
+                        </span>
+                        <span class="text-xs tracking-wider uppercase text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-400 font-semibold">
+                            Expert AI Project Audits
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-12">
+                    <a href="#services" class="text-gray-600 hover:text-gray-900 font-medium nav-link">Services</a>
+                    <a href="#why-us" class="text-gray-600 hover:text-gray-900 font-medium nav-link">Why Us</a>
+                    <a href="#contact" class="text-gray-600 hover:text-gray-900 font-medium nav-link">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-gray-900">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="contact">
-            <a href="https://www.instagram.com/sky4tress/" target="_blank"><i class="fa fa-instagram"></i></a>
-            <a href="https://t.me/Skyfortress" target="_blank"><i class="fa fa-telegram"></i></a>
-            <a href="https://www.linkedin.com/in/oleksii-bondarenko-332a68159/" target="_blank"><i class="fa fa-linkedin"></i></a>
-            <a href="https://github.com/skyfortress" target="_blank"><i class="fa fa-github"></i></a>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card absolute w-full border-t border-gray-100">
+            <div class="px-4 py-3 space-y-4">
+                <a href="#services" class="block text-gray-600 hover:text-gray-900 py-2">Services</a>
+                <a href="#why-us" class="block text-gray-600 hover:text-gray-900 py-2">Why Us</a>
+                <a href="#contact" class="block text-gray-600 hover:text-gray-900 py-2">Contact</a>
+            </div>
         </div>
-        <div class="badge">
-            <a href="https://www.credly.com/badges/3e99d2a5-e936-4ba2-bceb-c4164646e94d/public_url">
-                <img src="https://images.credly.com/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png">
+    </nav>
+
+    <header class="relative pt-40 pb-24 px-4 bg-gray-900 overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-indigo-900 via-gray-900 to-gray-900 opacity-90"></div>
+            <div class="absolute inset-0 hero-bg-animate" style="background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.1) 0%, transparent 50%)"></div>
+        </div>
+        <div class="max-w-4xl mx-auto relative z-10 text-center">
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight hero-title">Don't Let AI Mistakes <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-400">Cost You</span></h1>
+            <p class="text-lg md:text-xl text-gray-300 mb-12 leading-relaxed max-w-2xl mx-auto hero-description">A single security breach or performance issue can cost far more than an expert review. Get peace of mind knowing your AI-generated project is ready for the real world.</p>
+            <a href="#contact" class="inline-flex items-center px-10 py-5 rounded-lg text-white font-medium accent-gradient shadow-lg shadow-indigo-500/25 hover:shadow-xl hover:shadow-indigo-500/30 transition-all duration-300 hero-cta">
+                Get a Free Audit - Limited Slots
+                <i class="fas fa-arrow-right ml-3"></i>
             </a>
         </div>
-    </div>
-</header>
+    </header>
+
+    <section id="services" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-6">Human Expertise Behind Every Audit</h2>
+            <p class="text-gray-600 text-center mb-12 max-w-3xl mx-auto">Our audit team consists of senior developers with 10+ years of experience building production applications. Unlike automated tools, our experts understand the nuances of good architecture and scalable design.</p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-6 bg-gray-50 rounded-lg shadow-sm card-hover">
+                    <div class="flex items-start">
+                        <i class="fas fa-user-tie text-indigo-600 mt-1 mr-3 text-xl"></i>
+                        <div>
+                            <h3 class="font-semibold text-xl mb-2">Expert-Led Reviews</h3>
+                            <p class="text-gray-600">Every audit is performed by developers who have built and scaled real-world applications. We understand what makes code maintainable, secure, and ready for production because we've spent years in the trenches building such systems.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-lg shadow-sm card-hover">
+                    <div class="flex items-start">
+                        <i class="fas fa-lightbulb text-indigo-600 mt-1 mr-3 text-xl"></i>
+                        <div>
+                            <h3 class="font-semibold text-xl mb-2">Practical Solutions</h3>
+                            <p class="text-gray-600">We don't just identify problems—we provide actionable fixes based on industry experience. Our recommendations focus on practical improvements that will make your application more robust, secure, and scalable.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Common Issues with AI-Generated Code</h2>
+            <p class="text-center text-gray-600 mb-16 max-w-3xl mx-auto">Our auditors identify and fix these problems before they impact your business</p>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition service-card">
+                    <div class="flex items-center mb-4">
+                        <div class="p-4 rounded-full mr-4 shadow-md" style="background: linear-gradient(135deg, #6366F1 0%, #818CF8 100%);">
+                            <i class="fas fa-coins text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Unexpected Cloud Spending</h3>
+                    </div>
+                    <p class="text-gray-600">AI often generates inefficient database queries or resource-intensive operations that can cause your cloud bill to skyrocket once you scale. Our experts identify these issues before they become expensive problems.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition service-card">
+                    <div class="flex items-center mb-4">
+                        <div class="p-4 rounded-full mr-4 shadow-md" style="background: linear-gradient(135deg, #6366F1 0%, #818CF8 100%);">
+                            <i class="fas fa-shield-alt text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Security Vulnerabilities</h3>
+                    </div>
+                    <p class="text-gray-600">AI tools often generate code with security flaws like improper authentication, insecure API endpoints, or SQL injection risks. Our security reviews catch these issues before hackers can exploit them.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition service-card">
+                    <div class="flex items-center mb-4">
+                        <div class="p-4 rounded-full mr-4 shadow-md" style="background: linear-gradient(135deg, #6366F1 0%, #818CF8 100%);">
+                            <i class="fas fa-tachometer-alt text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Performance Bottlenecks</h3>
+                    </div>
+                    <p class="text-gray-600">AI-generated code often works fine with test data but collapses under real-world loads. We identify performance issues like memory leaks, N+1 queries, and blocking operations that would slow your application.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition service-card">
+                    <div class="flex items-center mb-4">
+                        <div class="p-4 rounded-full mr-4 shadow-md" style="background: linear-gradient(135deg, #6366F1 0%, #818CF8 100%);">
+                            <i class="fas fa-tools text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Outdated Dependencies</h3>
+                    </div>
+                    <p class="text-gray-600">AI systems often reference deprecated libraries or outdated practices from their training data. We ensure your codebase uses current, maintained technologies to avoid technical debt and security risks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-us" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Why Choose Us?</h2>
+            <p class="text-center text-gray-600 mb-16 max-w-3xl mx-auto">Seasoned developers who understand both code quality and business needs</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-6 bg-white rounded-lg shadow-sm card-hover">
+                    <div class="mx-auto bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-award text-indigo-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">10+ Years Experience</h3>
+                    <p class="text-gray-600">Our auditors have built and maintained production systems at scale for over a decade</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-lg shadow-sm card-hover">
+                    <div class="mx-auto bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-cogs text-indigo-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Tool Agnostic</h3>
+                    <p class="text-gray-600">We audit projects built with any AI tool including GPT-4, Claude, GitHub Copilot or custom models</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-lg shadow-sm card-hover">
+                    <div class="mx-auto bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-briefcase text-indigo-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Business-Focused</h3>
+                    <p class="text-gray-600">We prioritize fixes that protect your business and user experience, not theoretical concerns</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Ready to Audit Your AI generated project?</h2>
+            <p class="text-center text-gray-600 mb-10 max-w-xl mx-auto">Get expert eyes on your AI-generated code today</p>
+            <form id="audit-form" class="space-y-6 bg-white p-8 rounded-lg shadow-sm">
+                <div>
+                    <label class="block text-gray-700 font-medium mb-2">Email</label>
+                    <input type="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700 font-medium mb-2">Project Description (Optional)</label>
+                    <textarea name="project" class="w-full p-3 border border-gray-300 rounded-lg h-32 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                </div>
+                <button type="submit" class="w-full gradient-bg text-white py-3 rounded-lg hover:opacity-90 transition font-medium">Request Audit</button>
+                <div id="form-status" class="text-center hidden">
+                    <p class="text-green-600 font-medium">Thank you! We'll be in touch soon about your audit.</p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="gradient-bg text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="font-bold text-xl">SkyFortress Audit</div>
+                    </div>
+                    <p class="opacity-80">Trust, but Verify. Ensure Your AI-Generated project is Ready for the Real World.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="opacity-80 hover:opacity-100">Services</a></li>
+                        <li><a href="#why-us" class="opacity-80 hover:opacity-100">Why Us</a></li>
+                        <li><a href="#contact" class="opacity-80 hover:opacity-100">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center opacity-80">
+                            <i class="fas fa-envelope-open-text mr-2"></i>
+                            <a href="mailto:oleksii@skyfortress.dev" class="hover:underline">oleksii@skyfortress.dev</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white border-opacity-20 mt-8 pt-8 text-center opacity-80">
+                <p>&copy; 2025 SkyFortress Audit. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const formSubmit = async (data) => {
+            const googleFormURL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSc4q8qODOao8sWOjAajJ0m8EveF_dOlKchpTnyMoqddIVoT7Q/formResponse";
+            
+            const formData = new URLSearchParams();
+            formData.append("emailAddress", data.email);
+            formData.append("entry.1904325587", data.project);
+
+            await fetch(googleFormURL, {
+                method: "POST",
+                body: formData,
+                mode: "no-cors",
+            });
+        };
+
+        // Form submission handler
+        document.getElementById('audit-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                email: this.elements.email.value,
+                project: this.elements.project.value
+            };
+            
+            try {
+                await formSubmit(formData);
+                // Show success message
+                document.getElementById('form-status').classList.remove('hidden');
+                // Clear form
+                this.reset();
+                // After 5 seconds, hide the success message
+                setTimeout(() => {
+                    document.getElementById('form-status').classList.add('hidden');
+                }, 5000);
+            } catch (error) {
+                console.error('Form submission error:', error);
+            }
+        });
+        
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
