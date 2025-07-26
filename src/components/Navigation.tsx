@@ -35,6 +35,9 @@ export default function Navigation() {
             <Link href="/telegram-bots" className="text-gray-600 hover:text-gray-900 font-medium nav-link">
               Telegram Bots
             </Link>
+            <Link href="/chatbot-voicebot-services" className="text-gray-600 hover:text-gray-900 font-medium nav-link">
+              Chatbots & Voicebots
+            </Link>
             <Link href="/ecommerce-apps" className="text-gray-600 hover:text-gray-900 font-medium nav-link">
               E-commerce Apps
             </Link>
@@ -76,6 +79,13 @@ export default function Navigation() {
               onClick={closeMobileMenu}
             >
               Telegram Bots
+            </Link>
+            <Link 
+              href="/chatbot-voicebot-services" 
+              className="block text-gray-600 hover:text-gray-900 py-2"
+              onClick={closeMobileMenu}
+            >
+              Chatbots & Voicebots
             </Link>
             <Link 
               href="/ecommerce-apps" 

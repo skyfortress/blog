@@ -45,6 +45,12 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a href="/chatbot-voicebot-services" className="text-gray-300 hover:text-white transition-colors flex items-center">
+                  <i className="fas fa-microphone mr-2 text-sm"></i>
+                  Chatbots & Voicebots
+                </a>
+              </li>
+              <li>
                 <a href="/ecommerce-apps" className="text-gray-300 hover:text-white transition-colors flex items-center">
                   <i className="fas fa-shopping-cart mr-2 text-sm"></i>
                   E-commerce AI

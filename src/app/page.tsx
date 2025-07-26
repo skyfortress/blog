@@ -131,6 +131,30 @@ export default async function Home() {
               </div>
             </div>
           </div>
+
+          {/* Chatbot & Voicebot Service Highlight */}
+          <div className="mt-8 p-8 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-lg border border-purple-100">
+            <div className="flex items-center justify-between flex-wrap gap-6">
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold mb-2 flex items-center">
+                  <i className="fas fa-microphone text-purple-500 mr-3 text-3xl"></i>
+                  Advanced Chatbots & Voicebots
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Build sophisticated conversational AI with cutting-edge chatbots and voicebots. Powered by state-of-the-art models, ElevenLabs voice synthesis, Twilio integration, and real-time WebSocket communication.
+                </p>
+              </div>
+              <div className="flex-shrink-0">
+                <Link 
+                  href="/chatbot-voicebot-services" 
+                  className="inline-flex items-center px-6 py-3 rounded-lg text-white font-medium bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 shadow-lg"
+                >
+                  Learn More
+                  <i className="fas fa-arrow-right ml-2"></i>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
