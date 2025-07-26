@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
+import Testimonials from '@/components/Testimonials';
 import { getFeaturedPosts, formatDate } from '@/lib/blog';
 
 export default async function Home() {
@@ -316,6 +317,9 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <Testimonials backgroundColor="gray" />
 
       {/* Featured Blog Posts */}
       {featuredPosts.length > 0 && (

@@ -210,42 +210,6 @@ const content = {
       }
     ]
   },
-  useCases: {
-    title: "Real-World Applications",
-    description: "Our AI assistants solve real business challenges across industries",
-    cases: [
-      {
-        icon: "fas fa-headset",
-        title: "Customer Support Automation",
-        description: "24/7 intelligent customer service with escalation to human agents, ticket creation, and knowledge base integration."
-      },
-      {
-        icon: "fas fa-calendar-check",
-        title: "Appointment Scheduling",
-        description: "Voice and chat-based appointment booking with calendar integration, reminder systems, and automated confirmations."
-      },
-      {
-        icon: "fas fa-user-tie",
-        title: "Sales & Lead Qualification",
-        description: "AI assistants that qualify leads, schedule demos, answer product questions, and guide prospects through the sales funnel."
-      },
-      {
-        icon: "fas fa-graduation-cap",
-        title: "Educational Assistants",
-        description: "AI tutors and educational bots that provide personalized learning experiences, answer questions, and track progress."
-      },
-      {
-        icon: "fas fa-stethoscope",
-        title: "Healthcare Support",
-        description: "HIPAA-compliant medical assistants for appointment scheduling, symptom checking, and patient education."
-      },
-      {
-        icon: "fas fa-shopping-cart",
-        title: "E-commerce Assistance",
-        description: "Shopping assistants that help customers find products, process orders, handle returns, and provide personalized recommendations."
-      }
-    ]
-  }
 };
 
 export default function ChatbotVoicebotServicesPage() {
@@ -297,34 +261,6 @@ export default function ChatbotVoicebotServicesPage() {
           </div>
         </div>
       </section>
-
-      {/* Use Cases Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              {content.useCases.title}
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {content.useCases.description}
-            </p>
-          </div>
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
-            {content.useCases.cases.map((useCase, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-8 hover:bg-gray-100 transition-colors">
-                <div className="mb-6">
-                  <div className="w-14 h-14 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center mb-4">
-                    <i className={`${useCase.icon} text-white text-xl`}></i>
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{useCase.title}</h3>
-                  <p className="text-gray-600">{useCase.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <TechnologyStack 
         title={content.technologyStack.title}
         description={content.technologyStack.description}

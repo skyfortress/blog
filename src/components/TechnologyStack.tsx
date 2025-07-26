@@ -34,10 +34,17 @@ export default function TechnologyStack({
 
   const bgClass = backgroundColor === 'white' ? 'bg-white' : 'bg-gray-50';
   
-  // Dynamically determine number of columns based on categories count
-  const columnCount = Math.min(categories.length, 4);
-  const gridCols = columnCount === 4 ? 'md:grid-cols-4' : 
-                   columnCount === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3';
+  // Dynamically determine grid layout based on categories count
+  const getGridClasses = (count: number) => {
+    if (count <= 2) return 'md:grid-cols-2';
+    if (count === 3) return 'md:grid-cols-3';
+    if (count === 4) return 'md:grid-cols-2 lg:grid-cols-4';
+    if (count === 5) return 'md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5';
+    if (count === 6) return 'md:grid-cols-2 lg:grid-cols-3';
+    return 'md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'; // 7+ items
+  };
+
+  const gridCols = getGridClasses(categories.length);
 
   return (
     <section className={`py-16 ${bgClass}`}>
@@ -47,18 +54,28 @@ export default function TechnologyStack({
           {description}
         </p>
         
-        <div className={`grid ${gridCols} gap-8`}>
+        <div className={`grid grid-cols-1 ${gridCols} gap-6 lg:gap-8`}>
           {categories.map((category, index) => {
             const iconColor = getColorClasses(category.colorTheme, index);
             return (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-xl font-semibold mb-4 flex items-center">
-                  <i className={`${category.icon} ${iconColor} mr-3 text-2xl`}></i>
+              <div 
+                key={index} 
+                className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 transform hover:translate-y-[-2px] border border-gray-100 hover:border-gray-200 animate-fade-in-up group"
+                style={{animationDelay: `${index * 0.1}s`}}
+              >
+                <h3 className="text-xl font-semibold mb-4 flex items-center group-hover:text-gray-800 transition-colors duration-300">
+                  <i className={`${category.icon} ${iconColor} mr-3 text-2xl group-hover:scale-110 transition-transform duration-300`}></i>
                   {category.title}
                 </h3>
                 <ul className="space-y-2 text-gray-600">
                   {category.technologies.map((tech, techIndex) => (
-                    <li key={techIndex}>• {tech}</li>
+                    <li 
+                      key={techIndex} 
+                      className="flex items-center hover:text-gray-800 transition-colors duration-200"
+                    >
+                      <span className="w-2 h-2 bg-gray-300 rounded-full mr-3 flex-shrink-0 group-hover:bg-gray-400 transition-colors duration-300"></span>
+                      {tech}
+                    </li>
                   ))}
                 </ul>
               </div>
