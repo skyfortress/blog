@@ -88,6 +88,30 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          {/* MLOps Services Highlight */}
+          <div className="mt-8 p-8 bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg border border-purple-100">
+            <div className="flex items-center justify-between flex-wrap gap-6">
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold mb-2 flex items-center">
+                  <i className="fas fa-cogs text-purple-500 mr-3 text-3xl"></i>
+                  MLOps Infrastructure & Automation
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Streamline your machine learning lifecycle with enterprise-grade MLOps solutions. From model development to production deployment and monitoring, we build scalable ML pipelines that accelerate your AI initiatives.
+                </p>
+              </div>
+              <div className="flex-shrink-0">
+                <a 
+                  href="/mlops-services" 
+                  className="inline-flex items-center px-6 py-3 rounded-lg text-white font-medium bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 transition-all duration-300 shadow-lg"
+                >
+                  Learn More
+                  <i className="fas fa-arrow-right ml-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

@@ -40,6 +40,9 @@ export default function Navigation() {
             <a href="/custom-ai-services" className="text-gray-600 hover:text-gray-900 font-medium nav-link">
               Custom AI
             </a>
+            <a href="/mlops-services" className="text-gray-600 hover:text-gray-900 font-medium nav-link">
+              MLOps
+            </a>
           </div>
           <div className="md:hidden">
             <button 
@@ -83,6 +86,13 @@ export default function Navigation() {
               onClick={closeMobileMenu}
             >
               Custom AI
+            </a>
+            <a 
+              href="/mlops-services" 
+              className="block text-gray-600 hover:text-gray-900 py-2"
+              onClick={closeMobileMenu}
+            >
+              MLOps
             </a>
           </div>
         </div>

@@ -20,6 +20,11 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a href="/mlops-services" className="opacity-80 hover:opacity-100">
+                  MLOps Solutions
+                </a>
+              </li>
+              <li>
                 <a href="#why-us" className="opacity-80 hover:opacity-100">
                   Why Us
                 </a>
