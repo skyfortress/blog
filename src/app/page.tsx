@@ -15,14 +15,20 @@ export default async function Home() {
       <header className="relative pt-16 sm:pt-24 lg:pt-32 pb-16 sm:pb-24 lg:pb-32 px-4 sm:px-6 bg-gray-900 overflow-hidden min-h-screen flex items-center">
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-gray-900 to-purple-900 opacity-95"></div>
-          <div className="absolute inset-0 hero-bg-animate" style={{background: 'radial-gradient(circle at 30% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%), radial-gradient(circle at 70% 80%, rgba(147, 51, 234, 0.1) 0%, transparent 50%)'}}></div>
+          {/* Main gradient background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-gray-900 to-purple-900"></div>
           
-          {/* Floating Elements - Hidden on mobile */}
-          <div className="hidden sm:block absolute top-20 left-10 w-2 h-2 bg-indigo-400 rounded-full opacity-60 animate-pulse"></div>
-          <div className="hidden sm:block absolute top-40 right-20 w-1 h-1 bg-purple-400 rounded-full opacity-40 animate-pulse" style={{animationDelay: '1s'}}></div>
-          <div className="hidden sm:block absolute bottom-32 left-20 w-1.5 h-1.5 bg-blue-400 rounded-full opacity-50 animate-pulse" style={{animationDelay: '2s'}}></div>
-          <div className="hidden sm:block absolute top-60 left-1/3 w-1 h-1 bg-indigo-300 rounded-full opacity-30 animate-pulse" style={{animationDelay: '3s'}}></div>
+          {/* Animated radial gradients */}
+          <div className="absolute inset-0 hero-bg-animate opacity-80" style={{background: 'radial-gradient(circle at 30% 20%, rgba(99, 102, 241, 0.3) 0%, transparent 50%), radial-gradient(circle at 70% 80%, rgba(147, 51, 234, 0.2) 0%, transparent 50%)'}}></div>
+          
+          {/* Additional animated overlay */}
+          <div 
+            className="absolute inset-0 opacity-60" 
+            style={{
+              background: 'conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(99, 102, 241, 0.1) 60deg, transparent 120deg, rgba(147, 51, 234, 0.1) 180deg, transparent 240deg, rgba(59, 130, 246, 0.1) 300deg, transparent 360deg)',
+              animation: 'spin 20s linear infinite'
+            }}
+          ></div>
         </div>
 
         <div className="max-w-6xl mx-auto relative z-10 text-center w-full">
