@@ -12,28 +12,82 @@ export default async function Home() {
       <Navigation />
 
       {/* Hero Section */}
-      <header className="relative pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-20 lg:pb-24 px-4 bg-gray-900 overflow-hidden">
+      <header className="relative pt-16 sm:pt-24 lg:pt-32 pb-16 sm:pb-24 lg:pb-32 px-4 sm:px-6 bg-gray-900 overflow-hidden min-h-screen flex items-center">
+        {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-gray-900 to-gray-900 opacity-90"></div>
-          <div className="absolute inset-0 hero-bg-animate" style={{background: 'radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.1) 0%, transparent 50%)'}}></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-gray-900 to-purple-900 opacity-95"></div>
+          <div className="absolute inset-0 hero-bg-animate" style={{background: 'radial-gradient(circle at 30% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%), radial-gradient(circle at 70% 80%, rgba(147, 51, 234, 0.1) 0%, transparent 50%)'}}></div>
+          
+          {/* Floating Elements - Hidden on mobile */}
+          <div className="hidden sm:block absolute top-20 left-10 w-2 h-2 bg-indigo-400 rounded-full opacity-60 animate-pulse"></div>
+          <div className="hidden sm:block absolute top-40 right-20 w-1 h-1 bg-purple-400 rounded-full opacity-40 animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="hidden sm:block absolute bottom-32 left-20 w-1.5 h-1.5 bg-blue-400 rounded-full opacity-50 animate-pulse" style={{animationDelay: '2s'}}></div>
+          <div className="hidden sm:block absolute top-60 left-1/3 w-1 h-1 bg-indigo-300 rounded-full opacity-30 animate-pulse" style={{animationDelay: '3s'}}></div>
         </div>
-        <div className="max-w-4xl mx-auto relative z-10 text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8 leading-tight hero-title px-2">
-            Transform Your Business{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-400">
+
+        <div className="max-w-6xl mx-auto relative z-10 text-center w-full">
+          {/* Badge */}
+          <div className="inline-flex items-center px-3 py-2 sm:px-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white text-xs sm:text-sm font-medium mb-6 sm:mb-8 hero-title">
+            <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
+            <span className="hidden sm:inline">Available for New Projects</span>
+            <span className="sm:hidden">Available Now</span>
+          </div>
+
+          {/* Main Heading */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight hero-title px-2">
+            <span className="block sm:inline">Transform Your Business</span>{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-blue-400">
               With AI
             </span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-8 sm:mb-10 lg:mb-12 leading-relaxed max-w-2xl mx-auto hero-description px-4">
-            From custom AI solutions to intelligent automation, we build cutting-edge AI systems that scale your business and unlock unprecedented growth opportunities.
+
+          {/* Subtitle */}
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 sm:mb-10 lg:mb-12 leading-relaxed max-w-4xl mx-auto hero-description font-light px-2">
+            From custom AI solutions to intelligent automation, we build cutting-edge AI systems that 
+            <span className="text-indigo-400 font-medium"> scale your business</span> and unlock unprecedented growth opportunities.
           </p>
-          <Link 
-            href="#contact" 
-            className="inline-flex items-center px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-lg text-white font-medium accent-gradient shadow-lg shadow-indigo-500/25 hover:shadow-xl hover:shadow-indigo-500/30 transition-all duration-300 hero-cta text-sm sm:text-base min-h-[44px]"
-          >
-            Start Your AI Journey
-            <i className="fas fa-arrow-right ml-2 sm:ml-3"></i>
-          </Link>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col gap-3 sm:flex-row sm:gap-4 lg:gap-6 justify-center items-center mb-10 sm:mb-12 hero-cta px-2">
+            <Link 
+              href="#contact" 
+              className="group w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-lg text-white font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 shadow-xl shadow-indigo-500/25 hover:shadow-2xl hover:shadow-indigo-500/40 transition-all duration-300 transform hover:translate-y-[-2px] text-sm sm:text-base lg:text-lg min-w-[200px]"
+            >
+              Start Your AI Journey
+              <i className="fas fa-arrow-right ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform duration-300"></i>
+            </Link>
+            
+            <Link 
+              href="#services" 
+              className="group w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-lg text-white font-semibold bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 hover:border-white/50 transition-all duration-300 transform hover:translate-y-[-2px] text-sm sm:text-base lg:text-lg min-w-[200px]"
+            >
+              View Our Services
+              <i className="fas fa-external-link-alt ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform duration-300"></i>
+            </Link>
+          </div>
+
+          {/* Stats/Trust Indicators */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-3xl mx-auto px-2">
+            <div className="text-center p-3 sm:p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-300">
+              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">50+</div>
+              <div className="text-gray-400 text-xs sm:text-sm font-medium">AI Projects Delivered</div>
+            </div>
+            <div className="text-center p-3 sm:p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-300">
+              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">24hr</div>
+              <div className="text-gray-400 text-xs sm:text-sm font-medium">Response Time</div>
+            </div>
+            <div className="text-center p-3 sm:p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-300">
+              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">100%</div>
+              <div className="text-gray-400 text-xs sm:text-sm font-medium">Client Satisfaction</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator - Hidden on mobile */}
+        <div className="hidden sm:block absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
+          </div>
         </div>
       </header>
 
@@ -327,12 +381,14 @@ export default async function Home() {
       )}
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-50">
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-4">Ready to Transform Your Business with AI?</h2>
-          <p className="text-center text-gray-600 mb-10 max-w-xl mx-auto">
-            Let&apos;s discuss how our AI solutions can accelerate your business growth and innovation
-          </p>
+      <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-indigo-50">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Ready to Transform Your Business with AI?</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              Let&apos;s discuss how our AI solutions can accelerate your business growth and innovation. Get a free consultation and discover the possibilities.
+            </p>
+          </div>
           <ContactForm />
         </div>
       </section>
