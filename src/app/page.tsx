@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
@@ -23,13 +24,13 @@ export default function Home() {
           <p className="text-lg md:text-xl text-gray-300 mb-12 leading-relaxed max-w-2xl mx-auto hero-description">
             From custom AI solutions to intelligent automation, we build cutting-edge AI systems that scale your business and unlock unprecedented growth opportunities.
           </p>
-          <a 
+          <Link 
             href="#contact" 
             className="inline-flex items-center px-10 py-5 rounded-lg text-white font-medium accent-gradient shadow-lg shadow-indigo-500/25 hover:shadow-xl hover:shadow-indigo-500/30 transition-all duration-300 hero-cta"
           >
             Start Your AI Journey
             <i className="fas fa-arrow-right ml-3"></i>
-          </a>
+          </Link>
         </div>
       </header>
 
@@ -51,12 +52,12 @@ export default function Home() {
                   <p className="text-gray-600 mb-4">
                     Machine learning models, generative AI applications, computer vision, and NLP solutions tailored to your specific business challenges and requirements.
                   </p>
-                  <a 
+                  <Link 
                     href="/custom-ai-services" 
                     className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors"
                   >
                     Learn More <i className="fas fa-arrow-right ml-2"></i>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -69,12 +70,12 @@ export default function Home() {
                   <p className="text-gray-600 mb-4">
                     End-to-end MLOps solutions for model deployment, monitoring, and automation. Build scalable ML pipelines that accelerate your AI initiatives.
                   </p>
-                  <a 
+                  <Link 
                     href="/mlops-services" 
                     className="inline-flex items-center text-purple-600 font-medium hover:text-purple-700 transition-colors"
                   >
                     Learn More <i className="fas fa-arrow-right ml-2"></i>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -93,13 +94,13 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex-shrink-0">
-                <a 
+                <Link 
                   href="/telegram-bots" 
                   className="inline-flex items-center px-6 py-3 rounded-lg text-white font-medium bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 transition-all duration-300 shadow-lg"
                 >
                   Learn More
                   <i className="fas fa-arrow-right ml-2"></i>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -117,13 +118,13 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex-shrink-0">
-                <a 
+                <Link 
                   href="/ecommerce-apps" 
                   className="inline-flex items-center px-6 py-3 rounded-lg text-white font-medium bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 transition-all duration-300 shadow-lg"
                 >
                   Learn More
                   <i className="fas fa-arrow-right ml-2"></i>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
