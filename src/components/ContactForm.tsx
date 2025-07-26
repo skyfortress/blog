@@ -49,37 +49,39 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 bg-white p-8 rounded-lg shadow-sm">
+    <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 bg-white p-4 sm:p-6 lg:p-8 rounded-lg shadow-sm">
       <div>
-        <label className="block text-gray-700 font-medium mb-2">Email</label>
+        <label className="block text-gray-700 font-medium mb-2 text-sm sm:text-base">Email</label>
         <input
           type="email"
           name="email"
           value={formData.email}
           onChange={handleChange}
-          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+          className="w-full p-3 sm:p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-base min-h-[44px]"
           required
+          placeholder="your.email@example.com"
         />
       </div>
       <div>
-        <label className="block text-gray-700 font-medium mb-2">Project Description</label>
+        <label className="block text-gray-700 font-medium mb-2 text-sm sm:text-base">Project Description</label>
         <textarea
           name="project"
           value={formData.project}
           onChange={handleChange}
-          className="w-full p-3 border border-gray-300 rounded-lg h-32 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+          className="w-full p-3 sm:p-4 border border-gray-300 rounded-lg h-28 sm:h-32 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-base resize-none"
           required
+          placeholder="Tell us about your AI project..."
         />
       </div>
       <button
         type="submit"
-        className="w-full gradient-bg text-white py-3 rounded-lg hover:opacity-90 transition font-medium"
+        className="w-full gradient-bg text-white py-3 sm:py-4 rounded-lg hover:opacity-90 transition font-medium text-base sm:text-lg min-h-[44px]"
       >
         Request Audit
       </button>
       {isSubmitted && (
         <div className="text-center">
-          <p className="text-green-600 font-medium">
+          <p className="text-green-600 font-medium text-sm sm:text-base">
             Thank you! We&apos;ll be in touch soon about your audit.
           </p>
         </div>

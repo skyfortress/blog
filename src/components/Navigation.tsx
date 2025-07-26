@@ -46,16 +46,17 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-3 group">
+            <Link href="/" className="flex items-center space-x-2 sm:space-x-3 group">
               <div className="relative">
-                <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-indigo-500 via-purple-600 to-blue-600 rounded-xl lg:rounded-2xl flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105 group-hover:rotate-3">
-                  <span className="text-white font-bold text-lg lg:text-xl">S</span>
+                <div className="w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-indigo-500 via-purple-600 to-blue-600 rounded-lg sm:rounded-xl lg:rounded-2xl flex items-center justify-center shadow-lg sm:shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105 group-hover:rotate-3">
+                  <span className="text-white font-bold text-base sm:text-lg lg:text-xl">S</span>
                 </div>
-                <div className="absolute -inset-1 bg-gradient-to-br from-indigo-500 via-purple-600 to-blue-600 rounded-xl lg:rounded-2xl opacity-25 group-hover:opacity-40 transition-all duration-300 blur-sm"></div>
+                <div className="absolute -inset-1 bg-gradient-to-br from-indigo-500 via-purple-600 to-blue-600 rounded-lg sm:rounded-xl lg:rounded-2xl opacity-25 group-hover:opacity-40 transition-all duration-300 blur-sm"></div>
               </div>
               <div className="flex flex-col">
-                <span className="text-lg lg:text-xl xl:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 logo-text tracking-tight leading-tight">
-                  Skyfortress Development
+                <span className="text-base sm:text-lg lg:text-xl xl:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 logo-text tracking-tight leading-tight">
+                  <span className="hidden sm:inline">Skyfortress Development</span>
+                  <span className="sm:hidden">Skyfortress</span>
                 </span>
                 <span className="text-xs lg:text-xs tracking-wider uppercase text-gray-600 font-medium hidden sm:block -mt-0.5">
                   Expert AI Solutions
@@ -95,10 +96,12 @@ export default function Navigation() {
           <div className="lg:hidden">
             <button 
               onClick={toggleMobileMenu}
-              className="p-3 text-gray-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-xl transition-all duration-300 relative group"
+              className="p-2 sm:p-3 text-gray-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-lg sm:rounded-xl transition-all duration-300 relative group min-h-[44px] min-w-[44px]"
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileMenuOpen}
             >
               <svg 
-                className={`w-6 h-6 transition-all duration-300 ${mobileMenuOpen ? 'rotate-180 scale-90' : 'rotate-0 scale-100'}`} 
+                className={`w-5 h-5 sm:w-6 sm:h-6 transition-all duration-300 ${mobileMenuOpen ? 'rotate-180 scale-90' : 'rotate-0 scale-100'}`} 
                 fill="none" 
                 stroke="currentColor" 
                 viewBox="0 0 24 24"
@@ -115,59 +118,59 @@ export default function Navigation() {
       </div>
       
       {/* Mobile menu */}
-      <div className={`lg:hidden transition-all duration-400 ease-in-out transform ${
+      <div className={`lg:hidden transition-all duration-500 ease-out transform ${
         mobileMenuOpen 
           ? 'max-h-screen opacity-100 translate-y-0' 
-          : 'max-h-0 opacity-0 -translate-y-4 overflow-hidden'
+          : 'max-h-0 opacity-0 -translate-y-2 overflow-hidden'
       }`}>
         <div className="bg-white/98 backdrop-blur-xl border-t border-gray-200/60 shadow-2xl">
-          <div className="px-4 py-6 space-y-1">
+          <div className="px-4 py-4 sm:py-6 space-y-1">
             <Link 
               href="/telegram-bots" 
-              className="block px-4 py-3 text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-lg transition-all duration-300 group"
+              className="block px-3 sm:px-4 py-3 sm:py-4 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-lg transition-all duration-300 group min-h-[44px]"
               onClick={closeMobileMenu}
             >
               <span className="relative">Telegram Bots</span>
             </Link>
             <Link 
               href="/chatbot-voicebot-services" 
-              className="block px-4 py-3 text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-lg transition-all duration-300 group"
+              className="block px-3 sm:px-4 py-3 sm:py-4 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-lg transition-all duration-300 group min-h-[44px]"
               onClick={closeMobileMenu}
             >
               <span className="relative">AI Assistants</span>
             </Link>
             <Link 
               href="/ecommerce-apps" 
-              className="block px-4 py-3 text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-lg transition-all duration-300 group"
+              className="block px-3 sm:px-4 py-3 sm:py-4 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-lg transition-all duration-300 group min-h-[44px]"
               onClick={closeMobileMenu}
             >
               <span className="relative">E-commerce</span>
             </Link>
             <Link 
               href="/custom-ai-services" 
-              className="block px-4 py-3 text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-lg transition-all duration-300 group"
+              className="block px-3 sm:px-4 py-3 sm:py-4 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-lg transition-all duration-300 group min-h-[44px]"
               onClick={closeMobileMenu}
             >
               <span className="relative">Custom AI</span>
             </Link>
             <Link 
               href="/mlops-services" 
-              className="block px-4 py-3 text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-lg transition-all duration-300 group"
+              className="block px-3 sm:px-4 py-3 sm:py-4 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-lg transition-all duration-300 group min-h-[44px]"
               onClick={closeMobileMenu}
             >
               <span className="relative">MLOps</span>
             </Link>
             <Link 
               href="/blog" 
-              className="block px-4 py-3 text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-lg transition-all duration-300 group"
+              className="block px-3 sm:px-4 py-3 sm:py-4 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-lg transition-all duration-300 group min-h-[44px]"
               onClick={closeMobileMenu}
             >
               <span className="relative">Blog</span>
             </Link>
-            <div className="pt-4 border-t border-gray-200/60">
+            <div className="pt-3 sm:pt-4 border-t border-gray-200/60 mt-2">
               <button 
                 onClick={handleGetStarted}
-                className="w-full bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold text-sm hover:from-indigo-700 hover:via-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 relative overflow-hidden group btn-gradient-enhanced"
+                className="w-full bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 text-white px-6 py-4 rounded-lg font-semibold text-base hover:from-indigo-700 hover:via-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden group btn-gradient-enhanced min-h-[44px]"
               >
                 <span className="relative z-10">Get Started</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

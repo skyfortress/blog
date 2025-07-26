@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   title: "SkyFortress - Expert Audits for AI-Generated Projects",
   description: "Get your AI-generated code reviewed by expert developers. We audit for security, performance, and scalability to ensure your project is production-ready.",
   keywords: "AI audit, AI project review, AI security, AI performance, AI scalability, AI-generated code, expert code review",
+  viewport: "width=device-width, initial-scale=1, shrink-to-fit=no",
   openGraph: {
     title: "SkyFortress - Expert Audits for AI-Generated Projects",
     description: "Get your AI-generated code reviewed by expert developers. We audit for security, performance, and scalability to ensure your project is production-ready.",

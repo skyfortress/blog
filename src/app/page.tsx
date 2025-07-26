@@ -12,41 +12,41 @@ export default async function Home() {
       <Navigation />
 
       {/* Hero Section */}
-      <header className="relative pt-40 pb-24 px-4 bg-gray-900 overflow-hidden">
+      <header className="relative pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-20 lg:pb-24 px-4 bg-gray-900 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-gray-900 to-gray-900 opacity-90"></div>
           <div className="absolute inset-0 hero-bg-animate" style={{background: 'radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.1) 0%, transparent 50%)'}}></div>
         </div>
         <div className="max-w-4xl mx-auto relative z-10 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight hero-title">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8 leading-tight hero-title px-2">
             Transform Your Business{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-400">
               With AI
             </span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 mb-12 leading-relaxed max-w-2xl mx-auto hero-description">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-8 sm:mb-10 lg:mb-12 leading-relaxed max-w-2xl mx-auto hero-description px-4">
             From custom AI solutions to intelligent automation, we build cutting-edge AI systems that scale your business and unlock unprecedented growth opportunities.
           </p>
           <Link 
             href="#contact" 
-            className="inline-flex items-center px-10 py-5 rounded-lg text-white font-medium accent-gradient shadow-lg shadow-indigo-500/25 hover:shadow-xl hover:shadow-indigo-500/30 transition-all duration-300 hero-cta"
+            className="inline-flex items-center px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-lg text-white font-medium accent-gradient shadow-lg shadow-indigo-500/25 hover:shadow-xl hover:shadow-indigo-500/30 transition-all duration-300 hero-cta text-sm sm:text-base min-h-[44px]"
           >
             Start Your AI Journey
-            <i className="fas fa-arrow-right ml-3"></i>
+            <i className="fas fa-arrow-right ml-2 sm:ml-3"></i>
           </Link>
         </div>
       </header>
 
       {/* Services Section */}
-      <section id="services" className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-6">AI Development Services</h2>
-          <p className="text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+      <section id="services" className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-4 sm:mb-6">AI Development Services</h2>
+          <p className="text-gray-600 text-center mb-8 sm:mb-12 max-w-3xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed px-4">
             We specialize in building cutting-edge AI solutions that transform businesses. From machine learning models to intelligent automation, our expert team delivers custom AI systems that scale with your needs.
           </p>
           
           {/* Main Services Grid */}
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16">
             <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg border border-blue-100 card-hover">
               <div className="flex items-start">
                 <i className="fas fa-brain text-blue-600 mt-1 mr-3 text-2xl"></i>
