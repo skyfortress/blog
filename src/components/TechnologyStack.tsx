@@ -16,7 +16,7 @@ export default function TechnologyStack({
   title, 
   description, 
   categories, 
-  backgroundColor = 'gray' 
+  backgroundColor = 'gray'
 }: TechnologyStackProps) {
   const getColorClasses = (theme: TechCategory['colorTheme'], index: number) => {
     const themes = {
@@ -33,6 +33,11 @@ export default function TechnologyStack({
   };
 
   const bgClass = backgroundColor === 'white' ? 'bg-white' : 'bg-gray-50';
+  
+  // Dynamically determine number of columns based on categories count
+  const columnCount = Math.min(categories.length, 4);
+  const gridCols = columnCount === 4 ? 'md:grid-cols-4' : 
+                   columnCount === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3';
 
   return (
     <section className={`py-16 ${bgClass}`}>
@@ -42,7 +47,7 @@ export default function TechnologyStack({
           {description}
         </p>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className={`grid ${gridCols} gap-8`}>
           {categories.map((category, index) => {
             const iconColor = getColorClasses(category.colorTheme, index);
             return (

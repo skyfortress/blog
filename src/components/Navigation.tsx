@@ -2,10 +2,19 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  const isActiveLink = (href: string) => {
+    if (href === '/') {
+      return pathname === '/';
+    }
+    return pathname.startsWith(href);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,33 +64,75 @@ export default function Navigation() {
               </div>
               <div className="flex flex-col">
                 <span className="text-base sm:text-lg lg:text-xl xl:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 logo-text tracking-tight leading-tight">
-                  <span className="hidden sm:inline">Skyfortress Development</span>
+                  <span className="hidden sm:inline">Skyfortress</span>
                   <span className="sm:hidden">Skyfortress</span>
                 </span>
                 <span className="text-xs lg:text-xs tracking-wider uppercase text-gray-600 font-medium hidden sm:block -mt-0.5">
-                  Expert AI Solutions
+                  Development
                 </span>
               </div>
             </Link>
           </div>
           <div className="hidden lg:flex items-center space-x-1">
-            <Link href="/telegram-bots" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 transition-all duration-300 rounded-lg hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 nav-link-modern relative group">
+            <Link href="/telegram-bots" className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative group ${
+              isActiveLink('/telegram-bots') 
+                ? 'text-indigo-600' 
+                : 'text-gray-700 hover:text-indigo-600'
+            }`}>
               <span className="relative z-10">Bots</span>
+              <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all duration-300 ${
+                isActiveLink('/telegram-bots') ? 'w-full' : 'group-hover:w-full'
+              }`}></span>
             </Link>
-            <Link href="/chatbot-voicebot-services" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 transition-all duration-300 rounded-lg hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 nav-link-modern relative group">
+            <Link href="/chatbot-voicebot-services" className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative group ${
+              isActiveLink('/chatbot-voicebot-services') 
+                ? 'text-indigo-600' 
+                : 'text-gray-700 hover:text-indigo-600'
+            }`}>
               <span className="relative z-10">AI Chat</span>
+              <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all duration-300 ${
+                isActiveLink('/chatbot-voicebot-services') ? 'w-full' : 'group-hover:w-full'
+              }`}></span>
             </Link>
-            <Link href="/ecommerce-apps" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 transition-all duration-300 rounded-lg hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 nav-link-modern relative group">
+            <Link href="/ecommerce-apps" className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative group ${
+              isActiveLink('/ecommerce-apps') 
+                ? 'text-indigo-600' 
+                : 'text-gray-700 hover:text-indigo-600'
+            }`}>
               <span className="relative z-10">E-commerce</span>
+              <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all duration-300 ${
+                isActiveLink('/ecommerce-apps') ? 'w-full' : 'group-hover:w-full'
+              }`}></span>
             </Link>
-            <Link href="/custom-ai-services" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 transition-all duration-300 rounded-lg hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 nav-link-modern relative group">
+            <Link href="/custom-ai-services" className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative group ${
+              isActiveLink('/custom-ai-services') 
+                ? 'text-indigo-600' 
+                : 'text-gray-700 hover:text-indigo-600'
+            }`}>
               <span className="relative z-10">Custom AI</span>
+              <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all duration-300 ${
+                isActiveLink('/custom-ai-services') ? 'w-full' : 'group-hover:w-full'
+              }`}></span>
             </Link>
-            <Link href="/mlops-services" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 transition-all duration-300 rounded-lg hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 nav-link-modern relative group">
+            <Link href="/mlops-services" className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative group ${
+              isActiveLink('/mlops-services') 
+                ? 'text-indigo-600' 
+                : 'text-gray-700 hover:text-indigo-600'
+            }`}>
               <span className="relative z-10">MLOps</span>
+              <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all duration-300 ${
+                isActiveLink('/mlops-services') ? 'w-full' : 'group-hover:w-full'
+              }`}></span>
             </Link>
-            <Link href="/blog" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 transition-all duration-300 rounded-lg hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 nav-link-modern relative group">
+            <Link href="/blog" className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative group ${
+              isActiveLink('/blog') 
+                ? 'text-indigo-600' 
+                : 'text-gray-700 hover:text-indigo-600'
+            }`}>
               <span className="relative z-10">Blog</span>
+              <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all duration-300 ${
+                isActiveLink('/blog') ? 'w-full' : 'group-hover:w-full'
+              }`}></span>
             </Link>
             <div className="ml-3 pl-3 border-l border-gray-300">
               <button 
@@ -127,45 +178,87 @@ export default function Navigation() {
           <div className="px-4 py-4 sm:py-6 space-y-1">
             <Link 
               href="/telegram-bots" 
-              className="block px-3 sm:px-4 py-3 sm:py-4 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-lg transition-all duration-300 group min-h-[44px]"
+              className={`block px-3 sm:px-4 py-3 sm:py-4 text-base font-medium transition-all duration-300 relative group min-h-[44px] ${
+                isActiveLink('/telegram-bots') 
+                  ? 'text-indigo-600' 
+                  : 'text-gray-700 hover:text-indigo-600'
+              }`}
               onClick={closeMobileMenu}
             >
               <span className="relative">Telegram Bots</span>
+              <span className={`absolute bottom-2 left-3 sm:left-4 right-3 sm:right-4 h-0.5 bg-indigo-600 transition-all duration-300 ${
+                isActiveLink('/telegram-bots') ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+              }`}></span>
             </Link>
             <Link 
               href="/chatbot-voicebot-services" 
-              className="block px-3 sm:px-4 py-3 sm:py-4 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-lg transition-all duration-300 group min-h-[44px]"
+              className={`block px-3 sm:px-4 py-3 sm:py-4 text-base font-medium transition-all duration-300 relative group min-h-[44px] ${
+                isActiveLink('/chatbot-voicebot-services') 
+                  ? 'text-indigo-600' 
+                  : 'text-gray-700 hover:text-indigo-600'
+              }`}
               onClick={closeMobileMenu}
             >
               <span className="relative">AI Assistants</span>
+              <span className={`absolute bottom-2 left-3 sm:left-4 right-3 sm:right-4 h-0.5 bg-indigo-600 transition-all duration-300 ${
+                isActiveLink('/chatbot-voicebot-services') ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+              }`}></span>
             </Link>
             <Link 
               href="/ecommerce-apps" 
-              className="block px-3 sm:px-4 py-3 sm:py-4 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-lg transition-all duration-300 group min-h-[44px]"
+              className={`block px-3 sm:px-4 py-3 sm:py-4 text-base font-medium transition-all duration-300 relative group min-h-[44px] ${
+                isActiveLink('/ecommerce-apps') 
+                  ? 'text-indigo-600' 
+                  : 'text-gray-700 hover:text-indigo-600'
+              }`}
               onClick={closeMobileMenu}
             >
               <span className="relative">E-commerce</span>
+              <span className={`absolute bottom-2 left-3 sm:left-4 right-3 sm:right-4 h-0.5 bg-indigo-600 transition-all duration-300 ${
+                isActiveLink('/ecommerce-apps') ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+              }`}></span>
             </Link>
             <Link 
               href="/custom-ai-services" 
-              className="block px-3 sm:px-4 py-3 sm:py-4 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-lg transition-all duration-300 group min-h-[44px]"
+              className={`block px-3 sm:px-4 py-3 sm:py-4 text-base font-medium transition-all duration-300 relative group min-h-[44px] ${
+                isActiveLink('/custom-ai-services') 
+                  ? 'text-indigo-600' 
+                  : 'text-gray-700 hover:text-indigo-600'
+              }`}
               onClick={closeMobileMenu}
             >
               <span className="relative">Custom AI</span>
+              <span className={`absolute bottom-2 left-3 sm:left-4 right-3 sm:right-4 h-0.5 bg-indigo-600 transition-all duration-300 ${
+                isActiveLink('/custom-ai-services') ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+              }`}></span>
             </Link>
             <Link 
               href="/mlops-services" 
-              className="block px-3 sm:px-4 py-3 sm:py-4 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-lg transition-all duration-300 group min-h-[44px]"
+              className={`block px-3 sm:px-4 py-3 sm:py-4 text-base font-medium transition-all duration-300 relative group min-h-[44px] ${
+                isActiveLink('/mlops-services') 
+                  ? 'text-indigo-600' 
+                  : 'text-gray-700 hover:text-indigo-600'
+              }`}
               onClick={closeMobileMenu}
             >
               <span className="relative">MLOps</span>
+              <span className={`absolute bottom-2 left-3 sm:left-4 right-3 sm:right-4 h-0.5 bg-indigo-600 transition-all duration-300 ${
+                isActiveLink('/mlops-services') ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+              }`}></span>
             </Link>
             <Link 
               href="/blog" 
-              className="block px-3 sm:px-4 py-3 sm:py-4 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-lg transition-all duration-300 group min-h-[44px]"
+              className={`block px-3 sm:px-4 py-3 sm:py-4 text-base font-medium transition-all duration-300 relative group min-h-[44px] ${
+                isActiveLink('/blog') 
+                  ? 'text-indigo-600' 
+                  : 'text-gray-700 hover:text-indigo-600'
+              }`}
               onClick={closeMobileMenu}
             >
               <span className="relative">Blog</span>
+              <span className={`absolute bottom-2 left-3 sm:left-4 right-3 sm:right-4 h-0.5 bg-indigo-600 transition-all duration-300 ${
+                isActiveLink('/blog') ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+              }`}></span>
             </Link>
             <div className="pt-3 sm:pt-4 border-t border-gray-200/60 mt-2">
               <button 

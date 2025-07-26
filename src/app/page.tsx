@@ -75,7 +75,7 @@ export default async function Home() {
           {/* Stats/Trust Indicators */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-3xl mx-auto px-2">
             <div className="text-center p-3 sm:p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-300">
-              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">50+</div>
+              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">30+</div>
               <div className="text-gray-400 text-xs sm:text-sm font-medium">AI Projects Delivered</div>
             </div>
             <div className="text-center p-3 sm:p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-300">
