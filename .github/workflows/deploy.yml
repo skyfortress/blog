@@ -1,0 +1,39 @@
+name: skyfortress-deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+      - name: Cache node modules
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      - name: Install dependencies
+        run: yarn install --pure-lockfile --no-progress
+      - name: Build the site
+        env:
+          NODE_ENV: production
+        run: yarn export
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+      - name: Upload on S3
+        run: aws s3 sync ./out/ s3://skyfortress.dev --delete
+      - name: Invalidate cloudfront cache
+        run: aws cloudfront create-invalidation --distribution-id E3QA4CEIW2BTGW --paths "/*"
