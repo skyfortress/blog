@@ -44,6 +44,9 @@ export default function Navigation() {
             <Link href="/mlops-services" className="text-gray-600 hover:text-gray-900 font-medium nav-link">
               MLOps
             </Link>
+            <Link href="/blog" className="text-gray-600 hover:text-gray-900 font-medium nav-link">
+              Blog
+            </Link>
           </div>
           <div className="md:hidden">
             <button 
@@ -94,6 +97,13 @@ export default function Navigation() {
               onClick={closeMobileMenu}
             >
               MLOps
+            </Link>
+            <Link 
+              href="/blog" 
+              className="block text-gray-600 hover:text-gray-900 py-2"
+              onClick={closeMobileMenu}
+            >
+              Blog
             </Link>
           </div>
         </div>

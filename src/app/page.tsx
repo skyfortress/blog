@@ -2,8 +2,11 @@ import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
+import { getFeaturedPosts, formatDate } from '@/lib/blog';
 
-export default function Home() {
+export default async function Home() {
+  const featuredPosts = await getFeaturedPosts();
+
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -229,6 +232,75 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Featured Blog Posts */}
+      {featuredPosts.length > 0 && (
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Latest Insights</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Stay updated with the latest AI development best practices, security insights, and industry trends.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {featuredPosts.slice(0, 3).map((post) => (
+                <article key={post.slug} className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-300 card-hover">
+                  <div className="p-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-sm text-gray-500">{formatDate(post.date)}</span>
+                      <span className="px-2 py-1 bg-indigo-100 text-indigo-700 text-xs font-medium rounded-full">
+                        Featured
+                      </span>
+                    </div>
+                    
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">
+                      <Link href={`/blog/${post.slug}`} className="hover:text-indigo-600 transition-colors">
+                        {post.title}
+                      </Link>
+                    </h3>
+                    
+                    <p className="text-gray-600 mb-4 leading-relaxed">
+                      {post.excerpt}
+                    </p>
+                    
+                    <div className="flex items-center justify-between">
+                      <div className="flex flex-wrap gap-2">
+                        {post.tags.slice(0, 2).map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      
+                      <Link
+                        href={`/blog/${post.slug}`}
+                        className="text-indigo-600 hover:text-indigo-700 font-medium text-sm transition-colors"
+                      >
+                        Read more →
+                      </Link>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+            
+            <div className="text-center mt-12">
+              <Link
+                href="/blog"
+                className="inline-flex items-center px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors"
+              >
+                View All Articles
+                <i className="fas fa-arrow-right ml-2"></i>
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-gray-50">
