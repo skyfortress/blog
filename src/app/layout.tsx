@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import { structuredDataTemplates } from '@/lib/structured-data';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,29 +31,61 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "SkyFortress - Expert Audits for AI-Generated Projects",
-  description: "Get your AI-generated code reviewed by expert developers. We audit for security, performance, and scalability to ensure your project is production-ready.",
-  keywords: "AI audit, AI project review, AI security, AI performance, AI scalability, AI-generated code, expert code review",
-  viewport: "width=device-width, initial-scale=1, shrink-to-fit=no",
+  title: {
+    default: "SkyFortress - Expert AI Development & MLOps Services",
+    template: "%s | SkyFortress"
+  },
+  description: "Transform your business with custom AI solutions, MLOps infrastructure, intelligent chatbots, and expert code audits. Professional AI development services for enterprises and startups.",
+  keywords: "AI development, machine learning, MLOps, chatbots, voicebots, Telegram bots, e-commerce apps, AI audit, custom AI solutions, artificial intelligence services",
+  authors: [{ name: "SkyFortress Team" }],
+  creator: "SkyFortress",
+  publisher: "SkyFortress",
+  metadataBase: new URL("https://skyfortress.dev"),
+  alternates: {
+    canonical: "https://skyfortress.dev",
+  },
   openGraph: {
-    title: "SkyFortress - Expert Audits for AI-Generated Projects",
-    description: "Get your AI-generated code reviewed by expert developers. We audit for security, performance, and scalability to ensure your project is production-ready.",
+    title: "SkyFortress - Expert AI Development & MLOps Services",
+    description: "Transform your business with custom AI solutions, MLOps infrastructure, intelligent chatbots, and expert code audits. Professional AI development services for enterprises and startups.",
     url: "https://skyfortress.dev",
+    siteName: "SkyFortress",
     images: [
       {
         url: "https://skyfortress.dev/assets/og-image.png",
         width: 1200,
         height: 630,
-        alt: "SkyFortress - Expert Audits for AI-Generated Projects",
+        alt: "SkyFortress - Expert AI Development & MLOps Services",
       },
     ],
     type: "website",
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SkyFortress - Expert Audits for AI-Generated Projects",
-    description: "Get your AI-generated code reviewed by expert developers. We audit for security, performance, and scalability to ensure your project is production-ready.",
+    title: "SkyFortress - Expert AI Development & MLOps Services",
+    description: "Transform your business with custom AI solutions, MLOps infrastructure, intelligent chatbots, and expert code audits. Professional AI development services for enterprises and startups.",
+    creator: "@skyfortress",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "your-google-verification-code", // Replace with actual verification code
+  },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  shrinkToFit: "no",
 };
 
 export default function RootLayout({
@@ -65,6 +98,26 @@ export default function RootLayout({
       <head>
         {/* Preconnect to Google Analytics for faster loading */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* DNS prefetch for external resources */}
+        <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+        
+        {/* Security headers */}
+        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+        <meta httpEquiv="X-Frame-Options" content="DENY" />
+        <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
+        <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+        
+        {/* Theme color for mobile browsers */}
+        <meta name="theme-color" content="#4f46e5" />
+        <meta name="msapplication-TileColor" content="#4f46e5" />
+        
+        {/* Apple touch icon */}
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        
+        {/* Font Awesome */}
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -77,6 +130,22 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${plusJakartaSans.variable} ${spaceGrotesk.variable} antialiased bg-gray-50`}
       >
         {children}
+        
+        {/* Structured Data for SEO */}
+        <Script
+          id="organization-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredDataTemplates.organization()),
+          }}
+        />
+        <Script
+          id="website-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredDataTemplates.website()),
+          }}
+        />
         
         {/* Google Analytics with Next.js Script component for better performance */}
         <Script

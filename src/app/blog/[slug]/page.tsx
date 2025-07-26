@@ -3,6 +3,9 @@ import { notFound } from 'next/navigation';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { getPostBySlug, getAllPosts, formatDate } from '@/lib/blog';
+import { generateMetadata as genMetadata } from '@/lib/metadata';
+import { generateStructuredData } from '@/lib/structured-data';
+import Script from 'next/script';
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -21,22 +24,22 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
 
   if (!post) {
     return {
-      title: 'Post Not Found',
+      title: 'Post Not Found | SkyFortress Blog',
+      description: 'The requested blog post could not be found.',
     };
   }
 
-  return {
-    title: `${post.title} | SkyFortress Blog`,
+  return genMetadata({
+    title: `${post.title}`,
     description: post.excerpt,
-    openGraph: {
-      title: post.title,
-      description: post.excerpt,
-      type: 'article',
-      publishedTime: post.date,
-      authors: [post.author],
-      tags: post.tags,
-    },
-  };
+    keywords: post.tags?.join(', ') || 'AI development, machine learning, technology insights',
+    canonicalUrl: `https://skyfortress.dev/blog/${slug}`,
+    ogImage: `https://skyfortress.dev/assets/blog-og-${slug}.png`, // Custom OG image per post if available
+    ogType: 'article',
+    publishedTime: post.date,
+    authors: [post.author],
+    tags: post.tags,
+  });
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
@@ -126,6 +129,24 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       </main>
 
       <Footer />
+      
+      {/* Structured Data for SEO */}
+      <Script
+        id="blog-post-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateStructuredData({
+            type: 'BlogPosting',
+            title: post.title,
+            description: post.excerpt,
+            url: `https://skyfortress.dev/blog/${post.slug}`,
+            publishedTime: post.date,
+            modifiedTime: post.date,
+            author: post.author,
+            tags: post.tags,
+          })),
+        }}
+      />
     </div>
   );
 }

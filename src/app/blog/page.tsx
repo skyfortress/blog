@@ -2,6 +2,9 @@ import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { getAllPosts, formatDate, type BlogPostMeta } from '@/lib/blog';
+import { generateMetadata as genMetadata, pageMetadata } from '@/lib/metadata';
+
+export const metadata = genMetadata(pageMetadata.blog);
 
 export default async function BlogPage() {
   const posts = await getAllPosts();

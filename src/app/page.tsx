@@ -4,6 +4,9 @@ import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 import Testimonials from '@/components/Testimonials';
 import { getFeaturedPosts, formatDate } from '@/lib/blog';
+import { generateMetadata as genMetadata, pageMetadata } from '@/lib/metadata';
+
+export const metadata = genMetadata(pageMetadata.home);
 
 export default async function Home() {
   const featuredPosts = await getFeaturedPosts();

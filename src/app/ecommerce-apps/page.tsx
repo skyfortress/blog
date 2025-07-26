@@ -6,6 +6,11 @@ import ServiceTiers from '@/components/ServiceTiers';
 import TechnologyStack from '@/components/TechnologyStack';
 import ProcessSteps from '@/components/ProcessSteps';
 import ContactSection from '@/components/ContactSection';
+import { generateMetadata as genMetadata, pageMetadata } from '@/lib/metadata';
+import { structuredDataTemplates } from '@/lib/structured-data';
+import Script from 'next/script';
+
+export const metadata = genMetadata(pageMetadata.ecommerce);
 
 const content = {
   hero: {
@@ -262,6 +267,15 @@ export default function EcommerceApps() {
       />
 
       <Footer />
+      
+      {/* Structured Data for SEO */}
+      <Script
+        id="ecommerce-service-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredDataTemplates.ecommerceService()),
+        }}
+      />
     </div>
   );
 }
