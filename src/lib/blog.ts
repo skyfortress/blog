@@ -86,7 +86,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
 
 export async function getFeaturedPosts(): Promise<BlogPostMeta[]> {
   const allPosts = await getAllPosts();
-  return allPosts.filter(post => post.featured);
+  return allPosts.slice(0, 3);
 }
 
 export function formatDate(dateString: string): string {

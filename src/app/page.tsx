@@ -262,14 +262,14 @@ export default async function Home() {
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Latest Insights</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Latest Blog Posts</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
                 Stay updated with the latest AI development best practices, security insights, and industry trends.
               </p>
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {featuredPosts.slice(0, 3).map((post) => (
+              {featuredPosts.map((post) => (
                 <article key={post.slug} className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-300 card-hover">
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-4">
