@@ -74,17 +74,17 @@ export default async function Home() {
 
           {/* Stats/Trust Indicators */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-3xl mx-auto px-2">
-            <div className="text-center p-3 sm:p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-300">
-              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">30+</div>
-              <div className="text-gray-400 text-xs sm:text-sm font-medium">AI Projects Delivered</div>
+            <div className="text-center p-3 sm:p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 hover:border-indigo-400/30 transition-all duration-500 transform hover:scale-105 hover:translate-y-[-4px] group animate-fade-in-up hover:shadow-lg hover:shadow-indigo-500/20" style={{animationDelay: '0.6s'}}>
+              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1 transition-all duration-300 group-hover:text-indigo-400 animate-count-up group-hover:scale-110">30+</div>
+              <div className="text-gray-400 text-xs sm:text-sm font-medium group-hover:text-gray-300 transition-colors duration-300">AI Projects Delivered</div>
             </div>
-            <div className="text-center p-3 sm:p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-300">
-              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">24hr</div>
-              <div className="text-gray-400 text-xs sm:text-sm font-medium">Response Time</div>
+            <div className="text-center p-3 sm:p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 hover:border-purple-400/30 transition-all duration-500 transform hover:scale-105 hover:translate-y-[-4px] group animate-fade-in-up hover:shadow-lg hover:shadow-purple-500/20" style={{animationDelay: '0.8s'}}>
+              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1 transition-all duration-300 group-hover:text-purple-400 animate-pulse-subtle group-hover:scale-110">24hr</div>
+              <div className="text-gray-400 text-xs sm:text-sm font-medium group-hover:text-gray-300 transition-colors duration-300">Response Time</div>
             </div>
-            <div className="text-center p-3 sm:p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-300">
-              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">100%</div>
-              <div className="text-gray-400 text-xs sm:text-sm font-medium">Client Satisfaction</div>
+            <div className="text-center p-3 sm:p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 hover:border-green-400/30 transition-all duration-500 transform hover:scale-105 hover:translate-y-[-4px] group animate-fade-in-up hover:shadow-lg hover:shadow-green-500/20" style={{animationDelay: '1.0s'}}>
+              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1 transition-all duration-300 group-hover:text-green-400 animate-bounce-subtle group-hover:scale-110">100%</div>
+              <div className="text-gray-400 text-xs sm:text-sm font-medium group-hover:text-gray-300 transition-colors duration-300">Client Satisfaction</div>
             </div>
           </div>
         </div>
