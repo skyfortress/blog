@@ -15,19 +15,19 @@ export default function Home() {
         </div>
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight hero-title">
-            Don&apos;t Let AI Mistakes{' '}
+            Transform Your Business{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-400">
-              Cost You
+              With AI
             </span>
           </h1>
           <p className="text-lg md:text-xl text-gray-300 mb-12 leading-relaxed max-w-2xl mx-auto hero-description">
-            A single security breach or performance issue can cost far more than an expert review. Get peace of mind knowing your AI-generated project is ready for the real world.
+            From custom AI solutions to intelligent automation, we build cutting-edge AI systems that scale your business and unlock unprecedented growth opportunities.
           </p>
           <a 
             href="#contact" 
             className="inline-flex items-center px-10 py-5 rounded-lg text-white font-medium accent-gradient shadow-lg shadow-indigo-500/25 hover:shadow-xl hover:shadow-indigo-500/30 transition-all duration-300 hero-cta"
           >
-            Get a Free Audit - Limited Slots
+            Start Your AI Journey
             <i className="fas fa-arrow-right ml-3"></i>
           </a>
         </div>
@@ -36,37 +36,52 @@ export default function Home() {
       {/* Services Section */}
       <section id="services" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-6">Human Expertise Behind Every Audit</h2>
+          <h2 className="text-3xl font-bold text-center mb-6">AI Development Services</h2>
           <p className="text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-            Our audit team consists of senior developers with 10+ years of experience building production applications. Unlike automated tools, our experts understand the nuances of good architecture and scalable design.
+            We specialize in building cutting-edge AI solutions that transform businesses. From machine learning models to intelligent automation, our expert team delivers custom AI systems that scale with your needs.
           </p>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="p-6 bg-gray-50 rounded-lg shadow-sm card-hover">
+          
+          {/* Main Services Grid */}
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
+            <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg border border-blue-100 card-hover">
               <div className="flex items-start">
-                <i className="fas fa-user-tie text-indigo-600 mt-1 mr-3 text-xl"></i>
+                <i className="fas fa-brain text-blue-600 mt-1 mr-3 text-2xl"></i>
                 <div>
-                  <h3 className="font-semibold text-xl mb-2">Expert-Led Reviews</h3>
-                  <p className="text-gray-600">
-                    Every audit is performed by developers who have built and scaled real-world applications. We understand what makes code maintainable, secure, and ready for production because we&apos;ve spent years in the trenches building such systems.
+                  <h3 className="font-semibold text-xl mb-2">Custom AI Solutions</h3>
+                  <p className="text-gray-600 mb-4">
+                    Machine learning models, generative AI applications, computer vision, and NLP solutions tailored to your specific business challenges and requirements.
                   </p>
+                  <a 
+                    href="/custom-ai-services" 
+                    className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors"
+                  >
+                    Learn More <i className="fas fa-arrow-right ml-2"></i>
+                  </a>
                 </div>
               </div>
             </div>
-            <div className="p-6 bg-gray-50 rounded-lg shadow-sm card-hover">
+            
+            <div className="p-6 bg-gradient-to-br from-purple-50 to-blue-50 rounded-lg border border-purple-100 card-hover">
               <div className="flex items-start">
-                <i className="fas fa-lightbulb text-indigo-600 mt-1 mr-3 text-xl"></i>
+                <i className="fas fa-cogs text-purple-600 mt-1 mr-3 text-2xl"></i>
                 <div>
-                  <h3 className="font-semibold text-xl mb-2">Practical Solutions</h3>
-                  <p className="text-gray-600">
-                    We don&apos;t just identify problems—we provide actionable fixes based on industry experience. Our recommendations focus on practical improvements that will make your application more robust, secure, and scalable.
+                  <h3 className="font-semibold text-xl mb-2">MLOps Infrastructure</h3>
+                  <p className="text-gray-600 mb-4">
+                    End-to-end MLOps solutions for model deployment, monitoring, and automation. Build scalable ML pipelines that accelerate your AI initiatives.
                   </p>
+                  <a 
+                    href="/mlops-services" 
+                    className="inline-flex items-center text-purple-600 font-medium hover:text-purple-700 transition-colors"
+                  >
+                    Learn More <i className="fas fa-arrow-right ml-2"></i>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
           
           {/* Telegram Bots Service Highlight */}
-          <div className="mt-16 p-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg border border-blue-100">
+          <div className="mt-8 p-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg border border-blue-100">
             <div className="flex items-center justify-between flex-wrap gap-6">
               <div className="flex-1">
                 <h3 className="text-2xl font-bold mb-2 flex items-center">
@@ -89,22 +104,22 @@ export default function Home() {
             </div>
           </div>
 
-          {/* MLOps Services Highlight */}
-          <div className="mt-8 p-8 bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg border border-purple-100">
+          {/* E-commerce Apps Service Highlight */}
+          <div className="mt-8 p-8 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg border border-green-100">
             <div className="flex items-center justify-between flex-wrap gap-6">
               <div className="flex-1">
                 <h3 className="text-2xl font-bold mb-2 flex items-center">
-                  <i className="fas fa-cogs text-purple-500 mr-3 text-3xl"></i>
-                  MLOps Infrastructure & Automation
+                  <i className="fas fa-shopping-cart text-green-500 mr-3 text-3xl"></i>
+                  AI-Enhanced E-commerce Apps
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  Streamline your machine learning lifecycle with enterprise-grade MLOps solutions. From model development to production deployment and monitoring, we build scalable ML pipelines that accelerate your AI initiatives.
+                  Custom Shopify and BigCommerce apps enhanced with AI capabilities. From intelligent recommendations to smart inventory management, build apps that leverage AI to scale your online business.
                 </p>
               </div>
               <div className="flex-shrink-0">
                 <a 
-                  href="/mlops-services" 
-                  className="inline-flex items-center px-6 py-3 rounded-lg text-white font-medium bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 transition-all duration-300 shadow-lg"
+                  href="/ecommerce-apps" 
+                  className="inline-flex items-center px-6 py-3 rounded-lg text-white font-medium bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 transition-all duration-300 shadow-lg"
                 >
                   Learn More
                   <i className="fas fa-arrow-right ml-2"></i>
@@ -115,24 +130,48 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Common Issues Section */}
+      {/* AI Capabilities Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-4">Common Issues with AI-Generated Code</h2>
+          <h2 className="text-3xl font-bold text-center mb-4">Why Choose Our AI Development Services</h2>
           <p className="text-center text-gray-600 mb-16 max-w-3xl mx-auto">
-            Our auditors identify and fix these problems before they impact your business
+            We deliver enterprise-grade AI solutions with proven expertise and cutting-edge technology
           </p>
           
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition service-card">
               <div className="flex items-center mb-4">
                 <div className="p-4 rounded-full mr-4 shadow-md" style={{background: 'linear-gradient(135deg, #6366F1 0%, #818CF8 100%)'}}>
-                  <i className="fas fa-coins text-white text-xl"></i>
+                  <i className="fas fa-brain text-white text-xl"></i>
                 </div>
-                <h3 className="text-xl font-semibold">Unexpected Cloud Spending</h3>
+                <h3 className="text-xl font-semibold">Advanced AI & ML Models</h3>
               </div>
               <p className="text-gray-600">
-                AI often generates inefficient database queries or resource-intensive operations that can cause your cloud bill to skyrocket once you scale. Our experts identify these issues before they become expensive problems.
+                We build custom machine learning models, integrate LLMs like GPT-4 and Claude, and create computer vision solutions that solve real business problems with measurable results.
+              </p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition service-card">
+              <div className="flex items-center mb-4">
+                <div className="p-4 rounded-full mr-4 shadow-md" style={{background: 'linear-gradient(135deg, #6366F1 0%, #818CF8 100%)'}}>
+                  <i className="fas fa-rocket text-white text-xl"></i>
+                </div>
+                <h3 className="text-xl font-semibold">Scalable AI Infrastructure</h3>
+              </div>
+              <p className="text-gray-600">
+                Our MLOps expertise ensures your AI solutions scale efficiently. We build robust pipelines with monitoring, automation, and deployment strategies that grow with your business.
+              </p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition service-card">
+              <div className="flex items-center mb-4">
+                <div className="p-4 rounded-full mr-4 shadow-md" style={{background: 'linear-gradient(135deg, #6366F1 0%, #818CF8 100%)'}}>
+                  <i className="fas fa-cogs text-white text-xl"></i>
+                </div>
+                <h3 className="text-xl font-semibold">End-to-End Development</h3>
+              </div>
+              <p className="text-gray-600">
+                From concept to deployment, we handle the complete AI development lifecycle. Our team manages data preparation, model training, testing, and production deployment.
               </p>
             </div>
             
@@ -141,34 +180,10 @@ export default function Home() {
                 <div className="p-4 rounded-full mr-4 shadow-md" style={{background: 'linear-gradient(135deg, #6366F1 0%, #818CF8 100%)'}}>
                   <i className="fas fa-shield-alt text-white text-xl"></i>
                 </div>
-                <h3 className="text-xl font-semibold">Security Vulnerabilities</h3>
+                <h3 className="text-xl font-semibold">Enterprise-Grade Security</h3>
               </div>
               <p className="text-gray-600">
-                AI tools often generate code with security flaws like improper authentication, insecure API endpoints, or SQL injection risks. Our security reviews catch these issues before hackers can exploit them.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition service-card">
-              <div className="flex items-center mb-4">
-                <div className="p-4 rounded-full mr-4 shadow-md" style={{background: 'linear-gradient(135deg, #6366F1 0%, #818CF8 100%)'}}>
-                  <i className="fas fa-tachometer-alt text-white text-xl"></i>
-                </div>
-                <h3 className="text-xl font-semibold">Performance Bottlenecks</h3>
-              </div>
-              <p className="text-gray-600">
-                AI-generated code often works fine with test data but collapses under real-world loads. We identify performance issues like memory leaks, N+1 queries, and blocking operations that would slow your application.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition service-card">
-              <div className="flex items-center mb-4">
-                <div className="p-4 rounded-full mr-4 shadow-md" style={{background: 'linear-gradient(135deg, #6366F1 0%, #818CF8 100%)'}}>
-                  <i className="fas fa-tools text-white text-xl"></i>
-                </div>
-                <h3 className="text-xl font-semibold">Outdated Dependencies</h3>
-              </div>
-              <p className="text-gray-600">
-                AI systems often reference deprecated libraries or outdated practices from their training data. We ensure your codebase uses current, maintained technologies to avoid technical debt and security risks.
+                Security is built into every AI solution we develop. We implement robust data protection, secure API endpoints, and compliance-ready architectures for enterprise environments.
               </p>
             </div>
           </div>
@@ -176,38 +191,38 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section id="why-us" className="py-20 bg-gray-50">
+      <section id="why-us" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-4">Why Choose Us?</h2>
+          <h2 className="text-3xl font-bold text-center mb-4">Why Choose Our AI Development Team?</h2>
           <p className="text-center text-gray-600 mb-16 max-w-3xl mx-auto">
-            Seasoned developers who understand both code quality and business needs
+            Expert AI developers who understand both cutting-edge technology and business impact
           </p>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-6 bg-white rounded-lg shadow-sm card-hover">
+            <div className="text-center p-6 bg-gray-50 rounded-lg shadow-sm card-hover">
               <div className="mx-auto bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                <i className="fas fa-award text-indigo-600 text-xl"></i>
+                <i className="fas fa-graduation-cap text-indigo-600 text-xl"></i>
               </div>
-              <h3 className="text-xl font-semibold mb-4">10+ Years Experience</h3>
+              <h3 className="text-xl font-semibold mb-4">AI/ML Expertise</h3>
               <p className="text-gray-600">
-                Our auditors have built and maintained production systems at scale for over a decade
+                Deep expertise in machine learning, LLMs, computer vision, and NLP with proven track record in production AI systems
               </p>
             </div>
-            <div className="text-center p-6 bg-white rounded-lg shadow-sm card-hover">
+            <div className="text-center p-6 bg-gray-50 rounded-lg shadow-sm card-hover">
               <div className="mx-auto bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                <i className="fas fa-cogs text-indigo-600 text-xl"></i>
+                <i className="fas fa-layer-group text-indigo-600 text-xl"></i>
               </div>
-              <h3 className="text-xl font-semibold mb-4">Tool Agnostic</h3>
+              <h3 className="text-xl font-semibold mb-4">Full-Stack AI Development</h3>
               <p className="text-gray-600">
-                We audit projects built with any AI tool including GPT-4, Claude, GitHub Copilot or custom models
+                End-to-end AI solution development from data pipelines to user interfaces, including cloud deployment and monitoring
               </p>
             </div>
-            <div className="text-center p-6 bg-white rounded-lg shadow-sm card-hover">
+            <div className="text-center p-6 bg-gray-50 rounded-lg shadow-sm card-hover">
               <div className="mx-auto bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                <i className="fas fa-briefcase text-indigo-600 text-xl"></i>
+                <i className="fas fa-chart-line text-indigo-600 text-xl"></i>
               </div>
-              <h3 className="text-xl font-semibold mb-4">Business-Focused</h3>
+              <h3 className="text-xl font-semibold mb-4">Business-Focused Results</h3>
               <p className="text-gray-600">
-                We prioritize fixes that protect your business and user experience, not theoretical concerns
+                We focus on AI solutions that deliver measurable business value and ROI, not just impressive technical demonstrations
               </p>
             </div>
           </div>
@@ -217,9 +232,9 @@ export default function Home() {
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-gray-50">
         <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-4">Ready to Audit Your AI generated project?</h2>
+          <h2 className="text-3xl font-bold text-center mb-4">Ready to Transform Your Business with AI?</h2>
           <p className="text-center text-gray-600 mb-10 max-w-xl mx-auto">
-            Get expert eyes on your AI-generated code today
+            Let&apos;s discuss how our AI solutions can accelerate your business growth and innovation
           </p>
           <ContactForm />
         </div>
