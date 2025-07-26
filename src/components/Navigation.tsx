@@ -1,10 +1,21 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 20;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -14,110 +25,157 @@ export default function Navigation() {
     setMobileMenuOpen(false);
   };
 
+  const handleGetStarted = () => {
+    // Try to scroll to contact section, or open contact form
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // If no contact section, scroll to bottom of page
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+    closeMobileMenu();
+  };
+
   return (
-    <nav className="glass-card fixed w-full z-10 backdrop-blur-lg">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-between items-center h-20">
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${
+      scrolled 
+        ? 'bg-white/98 backdrop-blur-xl shadow-xl border-b border-gray-200/60' 
+        : 'bg-white/95 backdrop-blur-lg shadow-sm'
+    }`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16 lg:h-20">
           <div className="flex items-center">
-            <Link href="/" className="flex flex-col">
-              <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-500 logo-text">
-                SkyFortress
-              </span>
-              <span className="text-xs tracking-wider uppercase text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-400 font-semibold">
-                Expert AI Development
-              </span>
+            <Link href="/" className="flex items-center space-x-3 group">
+              <div className="relative">
+                <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-indigo-500 via-purple-600 to-blue-600 rounded-xl lg:rounded-2xl flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105 group-hover:rotate-3">
+                  <span className="text-white font-bold text-lg lg:text-xl">S</span>
+                </div>
+                <div className="absolute -inset-1 bg-gradient-to-br from-indigo-500 via-purple-600 to-blue-600 rounded-xl lg:rounded-2xl opacity-25 group-hover:opacity-40 transition-all duration-300 blur-sm"></div>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-lg lg:text-xl xl:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 logo-text tracking-tight leading-tight">
+                  Skyfortress Development
+                </span>
+                <span className="text-xs lg:text-xs tracking-wider uppercase text-gray-600 font-medium hidden sm:block -mt-0.5">
+                  Expert AI Solutions
+                </span>
+              </div>
             </Link>
           </div>
-          <div className="hidden md:flex space-x-12">
-            <a href="#services" className="text-gray-600 hover:text-gray-900 font-medium nav-link">
-              Services
-            </a>
-            <Link href="/telegram-bots" className="text-gray-600 hover:text-gray-900 font-medium nav-link">
-              Telegram Bots
+          <div className="hidden lg:flex items-center space-x-1">
+            <Link href="/telegram-bots" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 transition-all duration-300 rounded-lg hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 nav-link-modern relative group">
+              <span className="relative z-10">Bots</span>
             </Link>
-            <Link href="/chatbot-voicebot-services" className="text-gray-600 hover:text-gray-900 font-medium nav-link">
-              Chatbots & Voicebots
+            <Link href="/chatbot-voicebot-services" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 transition-all duration-300 rounded-lg hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 nav-link-modern relative group">
+              <span className="relative z-10">AI Chat</span>
             </Link>
-            <Link href="/ecommerce-apps" className="text-gray-600 hover:text-gray-900 font-medium nav-link">
-              E-commerce Apps
+            <Link href="/ecommerce-apps" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 transition-all duration-300 rounded-lg hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 nav-link-modern relative group">
+              <span className="relative z-10">E-commerce</span>
             </Link>
-            <Link href="/custom-ai-services" className="text-gray-600 hover:text-gray-900 font-medium nav-link">
-              Custom AI
+            <Link href="/custom-ai-services" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 transition-all duration-300 rounded-lg hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 nav-link-modern relative group">
+              <span className="relative z-10">Custom AI</span>
             </Link>
-            <Link href="/mlops-services" className="text-gray-600 hover:text-gray-900 font-medium nav-link">
-              MLOps
+            <Link href="/mlops-services" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 transition-all duration-300 rounded-lg hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 nav-link-modern relative group">
+              <span className="relative z-10">MLOps</span>
             </Link>
-            <Link href="/blog" className="text-gray-600 hover:text-gray-900 font-medium nav-link">
-              Blog
+            <Link href="/blog" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 transition-all duration-300 rounded-lg hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 nav-link-modern relative group">
+              <span className="relative z-10">Blog</span>
             </Link>
+            <div className="ml-3 pl-3 border-l border-gray-300">
+              <button 
+                onClick={handleGetStarted}
+                className="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 text-white px-5 py-2 rounded-full font-semibold text-sm hover:from-indigo-700 hover:via-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 hover:-translate-y-0.5 relative overflow-hidden group btn-gradient-enhanced"
+              >
+                <span className="relative z-10">Get Started</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </button>
+            </div>
           </div>
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button 
               onClick={toggleMobileMenu}
-              className="text-gray-600 hover:text-gray-900"
+              className="p-3 text-gray-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-xl transition-all duration-300 relative group"
             >
-              <i className="fas fa-bars text-xl"></i>
+              <svg 
+                className={`w-6 h-6 transition-all duration-300 ${mobileMenuOpen ? 'rotate-180 scale-90' : 'rotate-0 scale-100'}`} 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                {mobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
             </button>
           </div>
         </div>
       </div>
       
       {/* Mobile menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden glass-card absolute w-full border-t border-gray-100">
-          <div className="px-4 py-3 space-y-4">
-            <a 
-              href="#services" 
-              className="block text-gray-600 hover:text-gray-900 py-2"
-              onClick={closeMobileMenu}
-            >
-              Services
-            </a>
+      <div className={`lg:hidden transition-all duration-400 ease-in-out transform ${
+        mobileMenuOpen 
+          ? 'max-h-screen opacity-100 translate-y-0' 
+          : 'max-h-0 opacity-0 -translate-y-4 overflow-hidden'
+      }`}>
+        <div className="bg-white/98 backdrop-blur-xl border-t border-gray-200/60 shadow-2xl">
+          <div className="px-4 py-6 space-y-1">
             <Link 
               href="/telegram-bots" 
-              className="block text-gray-600 hover:text-gray-900 py-2"
+              className="block px-4 py-3 text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-lg transition-all duration-300 group"
               onClick={closeMobileMenu}
             >
-              Telegram Bots
+              <span className="relative">Telegram Bots</span>
             </Link>
             <Link 
               href="/chatbot-voicebot-services" 
-              className="block text-gray-600 hover:text-gray-900 py-2"
+              className="block px-4 py-3 text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-lg transition-all duration-300 group"
               onClick={closeMobileMenu}
             >
-              Chatbots & Voicebots
+              <span className="relative">AI Assistants</span>
             </Link>
             <Link 
               href="/ecommerce-apps" 
-              className="block text-gray-600 hover:text-gray-900 py-2"
+              className="block px-4 py-3 text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-lg transition-all duration-300 group"
               onClick={closeMobileMenu}
             >
-              E-commerce Apps
+              <span className="relative">E-commerce</span>
             </Link>
             <Link 
               href="/custom-ai-services" 
-              className="block text-gray-600 hover:text-gray-900 py-2"
+              className="block px-4 py-3 text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-lg transition-all duration-300 group"
               onClick={closeMobileMenu}
             >
-              Custom AI
+              <span className="relative">Custom AI</span>
             </Link>
             <Link 
               href="/mlops-services" 
-              className="block text-gray-600 hover:text-gray-900 py-2"
+              className="block px-4 py-3 text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-lg transition-all duration-300 group"
               onClick={closeMobileMenu}
             >
-              MLOps
+              <span className="relative">MLOps</span>
             </Link>
             <Link 
               href="/blog" 
-              className="block text-gray-600 hover:text-gray-900 py-2"
+              className="block px-4 py-3 text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 rounded-lg transition-all duration-300 group"
               onClick={closeMobileMenu}
             >
-              Blog
+              <span className="relative">Blog</span>
             </Link>
+            <div className="pt-4 border-t border-gray-200/60">
+              <button 
+                onClick={handleGetStarted}
+                className="w-full bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold text-sm hover:from-indigo-700 hover:via-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 relative overflow-hidden group btn-gradient-enhanced"
+              >
+                <span className="relative z-10">Get Started</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </button>
+            </div>
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 }

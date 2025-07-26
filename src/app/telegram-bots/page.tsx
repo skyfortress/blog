@@ -125,7 +125,7 @@ const content = {
         technologies: [
           "Python with aiogram/python-telegram-bot",
           "Node.js with Grammy/Telegraf",
-          "FastAPI and Express.js frameworks",
+          "FastAPI and NestJS frameworks",
           "Webhook and polling implementations"
         ],
         colorTheme: "blue" as const

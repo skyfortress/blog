@@ -134,7 +134,7 @@ const content = {
         icon: "fas fa-server",
         title: "Backend & APIs",
         technologies: [
-          "Node.js and Express.js",
+          "Node.js and NestJS",
           "Shopify Admin API & GraphQL",
           "BigCommerce REST & GraphQL APIs",
           "Webhook handling and real-time sync"
