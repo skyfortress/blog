@@ -7,12 +7,22 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Company Info */}
           <div className="sm:col-span-2 lg:col-span-2">
-            <div className="flex items-center mb-4 sm:mb-6">
-              <div className="p-2 rounded-lg bg-gradient-to-r from-indigo-500 to-blue-600 mr-3">
-                <i className="fas fa-brain text-white text-lg sm:text-xl"></i>
+            <Link href="/" className="flex items-center space-x-2 sm:space-x-3 group mb-4 sm:mb-6 w-fit">
+              <div className="relative">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-indigo-500 via-purple-600 to-blue-600 rounded-lg sm:rounded-xl lg:rounded-2xl flex items-center justify-center shadow-lg sm:shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105 group-hover:rotate-3">
+                  <span className="text-white font-bold text-base sm:text-lg lg:text-xl">S</span>
+                </div>
               </div>
-              <div className="font-bold text-xl sm:text-2xl">SkyFortress</div>
-            </div>
+              <div className="flex flex-col">
+                <span className="text-base sm:text-lg lg:text-xl xl:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-blue-400 logo-text tracking-tight leading-tight">
+                  <span className="hidden sm:inline">Skyfortress</span>
+                  <span className="sm:hidden">Skyfortress</span>
+                </span>
+                <span className="text-xs lg:text-xs tracking-wider uppercase text-gray-400 font-medium hidden sm:block -mt-0.5">
+                  AI solutions
+                </span>
+              </div>
+            </Link>
             <p className="text-gray-300 mb-4 sm:mb-6 leading-relaxed max-w-md text-sm sm:text-base">
               Transform your business with cutting-edge AI solutions. From custom machine learning models to intelligent automation, we build AI systems that scale and deliver real results.
             </p>

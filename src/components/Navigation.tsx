@@ -60,7 +60,6 @@ export default function Navigation() {
                 <div className="w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-indigo-500 via-purple-600 to-blue-600 rounded-lg sm:rounded-xl lg:rounded-2xl flex items-center justify-center shadow-lg sm:shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105 group-hover:rotate-3">
                   <span className="text-white font-bold text-base sm:text-lg lg:text-xl">S</span>
                 </div>
-                <div className="absolute -inset-1 bg-gradient-to-br from-indigo-500 via-purple-600 to-blue-600 rounded-lg sm:rounded-xl lg:rounded-2xl opacity-25 group-hover:opacity-40 transition-all duration-300 blur-sm"></div>
               </div>
               <div className="flex flex-col">
                 <span className="text-base sm:text-lg lg:text-xl xl:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 logo-text tracking-tight leading-tight">
@@ -68,7 +67,7 @@ export default function Navigation() {
                   <span className="sm:hidden">Skyfortress</span>
                 </span>
                 <span className="text-xs lg:text-xs tracking-wider uppercase text-gray-600 font-medium hidden sm:block -mt-0.5">
-                  Development
+                  AI solutions
                 </span>
               </div>
             </Link>

@@ -149,21 +149,21 @@ export default async function Home() {
           </div>
           
           {/* Telegram Bots Service Highlight */}
-          <div className="mt-8 p-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg border border-blue-100">
-            <div className="flex items-center justify-between flex-wrap gap-6">
+          <div className="mt-8 p-6 sm:p-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg border border-blue-100">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
               <div className="flex-1">
-                <h3 className="text-2xl font-bold mb-2 flex items-center">
-                  <i className="fab fa-telegram-plane text-blue-500 mr-3 text-3xl"></i>
-                  AI-Powered Telegram Bot Development
+                <h3 className="text-xl sm:text-2xl font-bold mb-2 flex items-center">
+                  <i className="fab fa-telegram-plane text-blue-500 mr-3 text-2xl sm:text-3xl"></i>
+                  <span>AI-Powered Telegram Bot Development</span>
                 </h3>
                 <p className="text-gray-600 mb-4">
                   Transform your business with intelligent Telegram bots powered by cutting-edge AI and LLM technology. From simple automation to complex conversational AI, we build bots that understand and engage.
                 </p>
               </div>
-              <div className="flex-shrink-0">
+              <div className="flex-shrink-0 w-full lg:w-auto">
                 <Link 
                   href="/telegram-bots" 
-                  className="inline-flex items-center px-6 py-3 rounded-lg text-white font-medium bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 transition-all duration-300 shadow-lg"
+                  className="inline-flex items-center justify-center w-full lg:w-auto px-6 py-3 rounded-lg text-white font-medium bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 transition-all duration-300 shadow-lg"
                 >
                   Learn More
                   <i className="fas fa-arrow-right ml-2"></i>
@@ -173,21 +173,21 @@ export default async function Home() {
           </div>
 
           {/* E-commerce Apps Service Highlight */}
-          <div className="mt-8 p-8 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg border border-green-100">
-            <div className="flex items-center justify-between flex-wrap gap-6">
+          <div className="mt-8 p-6 sm:p-8 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg border border-green-100">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
               <div className="flex-1">
-                <h3 className="text-2xl font-bold mb-2 flex items-center">
-                  <i className="fas fa-shopping-cart text-green-500 mr-3 text-3xl"></i>
-                  AI-Enhanced E-commerce Apps
+                <h3 className="text-xl sm:text-2xl font-bold mb-2 flex items-center">
+                  <i className="fas fa-shopping-cart text-green-500 mr-3 text-2xl sm:text-3xl"></i>
+                  <span>AI-Enhanced E-commerce Apps</span>
                 </h3>
                 <p className="text-gray-600 mb-4">
                   Custom Shopify and BigCommerce apps enhanced with AI capabilities. From intelligent recommendations to smart inventory management, build apps that leverage AI to scale your online business.
                 </p>
               </div>
-              <div className="flex-shrink-0">
+              <div className="flex-shrink-0 w-full lg:w-auto">
                 <Link 
                   href="/ecommerce-apps" 
-                  className="inline-flex items-center px-6 py-3 rounded-lg text-white font-medium bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 transition-all duration-300 shadow-lg"
+                  className="inline-flex items-center justify-center w-full lg:w-auto px-6 py-3 rounded-lg text-white font-medium bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 transition-all duration-300 shadow-lg"
                 >
                   Learn More
                   <i className="fas fa-arrow-right ml-2"></i>
@@ -197,21 +197,21 @@ export default async function Home() {
           </div>
 
           {/* Chatbot & Voicebot Service Highlight */}
-          <div className="mt-8 p-8 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-lg border border-purple-100">
-            <div className="flex items-center justify-between flex-wrap gap-6">
+          <div className="mt-8 p-6 sm:p-8 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-lg border border-purple-100">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
               <div className="flex-1">
-                <h3 className="text-2xl font-bold mb-2 flex items-center">
-                  <i className="fas fa-microphone text-purple-500 mr-3 text-3xl"></i>
-                  Advanced Chatbots & Voicebots
+                <h3 className="text-xl sm:text-2xl font-bold mb-2 flex items-center">
+                  <i className="fas fa-microphone text-purple-500 mr-3 text-2xl sm:text-3xl"></i>
+                  <span>Advanced Chatbots & Voicebots</span>
                 </h3>
                 <p className="text-gray-600 mb-4">
                   Build sophisticated conversational AI with cutting-edge chatbots and voicebots. Powered by state-of-the-art models, ElevenLabs voice synthesis, Twilio integration, and real-time WebSocket communication.
                 </p>
               </div>
-              <div className="flex-shrink-0">
+              <div className="flex-shrink-0 w-full lg:w-auto">
                 <Link 
                   href="/chatbot-voicebot-services" 
-                  className="inline-flex items-center px-6 py-3 rounded-lg text-white font-medium bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 shadow-lg"
+                  className="inline-flex items-center justify-center w-full lg:w-auto px-6 py-3 rounded-lg text-white font-medium bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 shadow-lg"
                 >
                   Learn More
                   <i className="fas fa-arrow-right ml-2"></i>
