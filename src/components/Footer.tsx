@@ -27,9 +27,9 @@ export default function Footer() {
               Transform your business with cutting-edge AI solutions. From custom machine learning models to intelligent automation, we build AI systems that scale and deliver real results.
             </p>
             <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
-              <a href="mailto:oleksii@skyfortress.dev" className="flex items-center text-gray-300 hover:text-white transition-colors text-sm sm:text-base min-h-[44px]">
+              <a href="mailto:info@skyfortress.dev" className="flex items-center text-gray-300 hover:text-white transition-colors text-sm sm:text-base min-h-[44px]">
                 <i className="fas fa-envelope mr-2"></i>
-                oleksii@skyfortress.dev
+                info@skyfortress.dev
               </a>
             </div>
           </div>
