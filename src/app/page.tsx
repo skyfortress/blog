@@ -68,10 +68,10 @@ export default async function Home() {
             </Link>
             
             <Link 
-              href="#services" 
+              href="https://generator.skyfortress.dev" 
               className="group w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-lg text-white font-semibold bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 hover:border-white/50 transition-all duration-300 transform hover:translate-y-[-2px] text-sm sm:text-base lg:text-lg min-w-[200px]"
             >
-              View Our Services
+              Try out AI Image Generator
               <i className="fas fa-external-link-alt ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform duration-300"></i>
             </Link>
           </div>
